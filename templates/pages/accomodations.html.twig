@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<h1>{{ title }}</h1>
+
+		<p>
+		These are the 2 accomodations we recommand. If you decide to stay somewhere else, let us know so we can organize transportation to the weddinjg venue.
+		</p>
+		<div class="wrapper">
+			<div class="box">
+				Harpers ferry adventure center
+				<img src="{{ asset('images/cabins.jpg') }}" alt="">
+			</div>
+			<div class="box">
+				Clarion Hotel
+				<img src="{{ asset('images/clarion.jpg') }}" alt="">
+			</div>
+		</div>
+
+		<p>Here are some honorable mentions</p>
+			<ul>
+			<li>
+				Bnb ...
+			</li>
+		</ul>
+	</section>
+{% endblock %}

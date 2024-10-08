@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}
+				Annie & Thomas - 07/12/2025
+			{% endblock %}
+		</title>
+
+		{% block javascripts %}
+			{% block importmap %}
+				{{ importmap('app') }}
+			{% endblock %}
+		{% endblock %}
+	</head>
+
+	<body>
+		<div class="homepic">
+			<a href="{{ path('home_page') }}" class="main-pic">
+				<img src="{{ asset('images/dan.jpg') }}" alt="">
+			</a>
+		</div>
+	</body>
+</html>

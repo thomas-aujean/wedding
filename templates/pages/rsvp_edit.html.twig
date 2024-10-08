@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<h1>{{ title }}</h1>
+		<div class="wrapper">
+			<div>
+				Ajouter un memmbre
+				{{ form(form) }}
+
+				</div>
+				<div>
+					Les membres de ma famille
+
+					{% for people in rsvp.getPeople %}
+						<li>
+							{{ people.firstName|e }}
+							- <a href="{{ path('people_edit', {'uuid': people.uuid}) }}">update</a>
+							- <a href="{{ path('people_delete', {'uuid': people.uuid}) }}">Delete</a>
+						</li>
+					{% endfor %}
+				</div>
+			</div>
+		</section>
+	{% endblock %}

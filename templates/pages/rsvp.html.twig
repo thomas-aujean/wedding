@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<h1>{{ title }}</h1>
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
+
+		<div class="wrapper">
+			{{ form_row(form.isAttending) }}
+			{{ form_row(form.name) }}
+		</div>
+
+		<div class="text-center">
+			{{ form_row(form.submit) }}
+		</div>
+		{{ form_end(form) }}
+
+
+		<div>Si vous avez déjà fait votre demande et que vous n'avez pas gardé l'URL, appelez moi, je vous renvois ça de suite.</div>
+	</section>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<h1>Update</h1>
+			<div>
+				Edit un memmbre
+				{{ form(form) }}
+			</div>
+
+			
+		<a href="{{ path('rsvp_edit', {'uuid': people.rsvp.uuid}) }}">Retour a ma page</a>
+	</section>
+	{% endblock %}
