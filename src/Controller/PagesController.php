@@ -4,22 +4,26 @@ namespace App\Controller;
 
 use App\Entity\Rsvp;
 use App\Entity\People;
+use App\Form\RsvpType;
+use App\Form\PeopleType;
+use App\Form\PeoplePreferenceType;
+use App\Service\RsvpService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Uid\Uuid;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Translation\LocaleSwitcher;
 
 class PagesController extends AbstractController
 {
     #[Route('/accomodations', name: 'accomodations')]
     public function accomodations(Request $request): Response
     {
-        return $this->renderPage(__FUNCTION__);
+        return $this->render('pages/accomodations.html.twig', [
+            'title' => 'accomodations',
+        ]);
     }
 
     #[Route('/transportation', name: 'transportation')]
@@ -29,9 +33,12 @@ class PagesController extends AbstractController
     }
 
     #[Route('/itinerary', name: 'itinerary')]
-    public function itinerary(Request $request): Response
+    public function itinerary(Request $request, TranslatorInterface $translator): Response
     {
-        return $this->renderPage(__FUNCTION__);
+        return $this->render('pages/itinerary.html.twig', [
+            'title' => 'itinerary',
+            'choose' => 'choose',
+        ]);
     }
 
     #[Route('/registry', name: 'registry')]
@@ -41,42 +48,28 @@ class PagesController extends AbstractController
     }
 
     #[Route('/rsvp', name: 'rsvp')]
-    public function rsvp(Request $request, EntityManagerInterface $entityManager): Response
+    public function rsvp(Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
     {
-        // if ($request->getSession()->get('rsvp')) {
-            // return $this->redirectToRoute('rsvp_edit', ['uuid' => $request->getSession()->get('rsvp')->getUuid()]);
-        // }
-
-        // ADD IP CHECK !!
-
-        $rsvp = new Rsvp();
-
-        $form = $this->createFormBuilder($rsvp)
-            ->add('isAttending', ChoiceType::class, [
-                'choices'  => [
-                    'Of course !' => true,
-                    'Unfortunately no' => false,
-                ],
-                'label' => 'Will you be attending our wedding'
-            ])
-            ->add('name', TextType::class)
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
-            ->getForm();
+        $rsvp = $rsvpService->retrieve($request);
+        if ($rsvp->isAttending()) {
+            return $this->redirectToRoute('rsvp_confirm', ['uuid' => $rsvp->getUuid()]);
+        }
+        
+        $people = new People();
+        $form = $this->createForm(RsvpType::class, $people);
 
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $rsvp = $form->getData();
-            $rsvp->setUuid(Uuid::v4());
-            $rsvp->setIpAddress($request->getClientIp());
 
-            $entityManager->persist($rsvp);
-            $entityManager->flush();
+            $rsvpService->handleRsvp($people, $request->getClientIp(), $entityManager);
+            $request->getSession()->set('rsvp', $people->getRsvp());
 
-            $request->getSession()->set('rsvp', $rsvp);
+            if ($people->getRsvp()->isAttending()) {
+                return $this->redirectToRoute('rsvp_attend', ['uuid' => $people->getRsvp()->getUuid()]);
+            }
 
-            return $this->redirectToRoute('rsvp_edit', ['uuid' => $rsvp->getUuid()]);
+            return $this->redirectToRoute('rsvp_no', ['uuid' => $people->getRsvp()->getUuid()]);
         }
 
         return $this->render('pages/rsvp.html.twig', [
@@ -85,52 +78,55 @@ class PagesController extends AbstractController
         ]);
     }
 
-
-    #[Route('/rsvp/edit/{uuid}', name: 'rsvp_edit')]
-    public function rsvpSuccess(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager): Response
+    #[Route('/rsvp/decline/{uuid}', name: 'rsvp_no')]
+    public function rsvpDecline(Rsvp $rsvp): Response
     {
-        $people = new People();
-
-        $form = $this->createFormBuilder($people)
-            ->add('firstName', TextType::class)
-            ->add('lastName', TextType::class, [
-                'attr' => [
-                    'value' => $rsvp->getName(),
-                ],
-            ])
-            ->add('mealPreference', ChoiceType::class, [
-                'choices'  => [
-                    'I want meat' => 'meat',
-                    'flowers for me' => 'vegan',
-                ],
-                'label' => 'What you eat'
-            ])
-            ->add('activity', ChoiceType::class, [
-                'choices'  => [
-                    'Zip line sounds fun' => 'zip',
-                    'keep floating' => 'float',
-                ],
-                'label' => 'Activity'
-            ])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
-            ->getForm();
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $people = $form->getData();
-            $people->setRsvp($rsvp);
-            $people->setUuid(Uuid::v4());
-
-            $entityManager->persist($people);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('rsvp_edit', ['uuid' => $rsvp->getUuid()]);
+        if ($rsvp->isAttending()) {
+            return $this->redirectToRoute('rsvp_attend', ['uuid' => $rsvp->getUuid()]);
         }
 
-        return $this->render('pages/rsvp_edit.html.twig', [
-            'title' => 'RSVP famille ' . $rsvp->getName(),
+        return $this->render('pages/rsvp_decline.html.twig', [
+            'title' => 'rsvp',
+        ]);
+    }
+
+    #[Route('/rsvp/attend/{uuid}', name: 'rsvp_attend')]
+    public function rsvpSuccess(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
+    {
+        $people = $rsvp->getPeople()[0];
+
+        $form = $this->createForm(PeoplePreferenceType::class, $people);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $rsvpService->handlePreference($people, $entityManager);
+
+            return $this->redirectToRoute('rsvp_confirm', ['uuid' => $rsvp->getUuid()]);
+        }
+
+        return $this->render('pages/rsvp_attend.html.twig', [
+            'title' => 'Merci  ' . $people->getFirstName() . ' !',
+            'rsvp' => $rsvp,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/rsvp/confirm/{uuid}', name: 'rsvp_confirm')]
+    public function rsvpConfirm(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
+    {
+        $people = new people();
+        $form = $this->createForm(PeopleType::class, $people);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $people->setRsvp($rsvp);
+            $rsvpService->handlePreference($people, $entityManager);
+
+            return $this->redirectToRoute('rsvp_confirm', ['uuid' => $rsvp->getUuid()]);
+        }
+
+        return $this->render('pages/rsvp_confirm.html.twig', [
+            'title' => 'A très vite !',
             'rsvp' => $rsvp,
             'form' => $form,
         ]);
@@ -144,5 +140,14 @@ class PagesController extends AbstractController
         return $this->render('pages/' . mb_strtolower($method) . '.html.twig', [
             'title' => $method,
         ]);
+    }
+
+    #[Route('/language/{lang}', name: 'language')]
+    public function language(string $lang, Request $request, LocaleSwitcher $localeSwitcher): Response
+    {
+        $request->getSession()->set('_locale', $lang);
+        $localeSwitcher->setLocale($request->getSession()->get('_locale'));
+
+        return $this->redirect($request->headers->get('referer'));
     }
 }

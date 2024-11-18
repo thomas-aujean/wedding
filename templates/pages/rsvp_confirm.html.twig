@@ -1,0 +1,95 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<div class="title-img">
+			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
+		</div>
+
+		<h1>{{ title }}</h1>
+
+
+		<div class="text-center">
+	Recap
+</div>
+<p>Merci d'ajouter de renseigner tous les particiapnts au mariage</p>
+
+		<div class="wrapper three">
+			{% for person in rsvp.people %}
+				<div class="box">
+					{{ person.firstName }}
+					{{ person.lastName }}
+					<br>
+					Repas :
+					{{ person|meal() }}
+					<br>
+					Activitée :
+					{{ person|activity() }}
+					<br>
+					Yoga :
+					{{ person|yoga() }}
+					<br>
+					Location :
+					{{ person|location() }}
+					<br>
+					</div>
+			{% endfor %}
+		</div>
+		
+
+
+<!-- Button trigger modal -->
+<div class="d-flex  justify-content-center">
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPLusOne">
+Add +1
+</button>
+</div>
+
+{{ include('pages/_activities_details.html.twig') }}
+<!-- Modal -->
+<div class="modal fade" id="addPLusOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+	  {{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+	  {{ form_errors(form) }}
+
+	  <div class="wrapper">
+		  {{ form_row(form.firstName) }}
+		  {{ form_row(form.lastName) }}
+		  {{ form_row(form.mealPreference) }}
+		  {{ form_row(form.activity) }}
+		  {{ form_row(form.yoga) }}
+		  {{ form_row(form.location) }}
+	  </div>
+
+	  <div class="text-center">
+		  {{ form_row(form.submit) }}
+	  </div>
+	  {{ form_end(form) }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+		{# <div>
+												Les membres de ma famille
+								
+												{% for people in rsvp.getPeople %}
+													<li>
+														{{ people.firstName|e }}
+														- <a href="{{ path('people_edit', {'uuid': people.uuid}) }}">update</a>
+														- <a href="{{ path('people_delete', {'uuid': people.uuid}) }}">Delete</a>
+													</li>
+												{% endfor %}
+											</div> #}
+	</section>
+{% endblock %}

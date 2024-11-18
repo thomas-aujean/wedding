@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<div class="title-img">
+			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
+		</div>
+
+		<h1>{{ title }}</h1>
+
+		{{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
+		{{ form_errors(form) }}
+
+		<div class="wrapper">
+			{{ form_row(form.mealPreference) }}
+			{{ form_row(form.activity) }}
+			{{ form_row(form.yoga) }}
+			{{ form_row(form.location) }}
+		</div>
+
+		<div class="text-center">
+			{{ form_row(form.submit) }}
+		</div>
+		{{ form_end(form) }}
+
+		{{ include('pages/_activities_details.html.twig') }}
+
+
+		{# <div>
+						Les membres de ma famille
+		
+						{% for people in rsvp.getPeople %}
+							<li>
+								{{ people.firstName|e }}
+								- <a href="{{ path('people_edit', {'uuid': people.uuid}) }}">update</a>
+								- <a href="{{ path('people_delete', {'uuid': people.uuid}) }}">Delete</a>
+							</li>
+						{% endfor %}
+					</div> #}
+	</section>
+{% endblock %}

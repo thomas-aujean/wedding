@@ -1,11 +1,15 @@
 {% extends "base.html.twig" %}
 {% block body %}
 <section>
-<h1>{{ title }}</h1>
+	<div class="title-img">
+			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
+		</div>
+
+<h1>{{ title|trans }}</h1>
 <div class="" style="display:flex; justify-content:center;">
 
 
-	<a href="https://www.milleetunelistes.fr/" class="box" target="_blank">
+	<a href="https://www.milleetunelistes.fr/liste/annie-thomas" class="box-link" target="_blank">
 	Our registry
 	</a>
 

@@ -2,11 +2,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
 
+@font-face {
+    font-family: 'Viora';
+    src: url('../fonts/Viora.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Slogest';
+    src: url('../fonts/Slogest.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --dark-blue: #2b5daa;
     --light-blue: #abdcdd;
-  }
-  
+    --dark-green: #868a48;
+}
+
 
 body {
     margin: 0;
@@ -19,30 +34,35 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    font-family: "Roboto", sans-serif;
-    /* background-color: #bdbc84; */
+    font-family: "Slogest", sans-serif;
+    font-size: 20px;
     flex: 1;
 
     & h1 {
         text-align: center;
+        color: var(--dark-green);
     }
 
     & section {
-        flex: 1;
+        /* flex: 1; */
         display: flex;
         flex-direction: column;
-        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        height: 100%;
     }
 }
 
 h1 {
 
-    font-family: "Cinzel", serif;
+    /* font-family: "Cinzel", serif; */
+    font-family: "Viora", serif;
 }
 
 
 .navbar {
-    font-family: "Cinzel", serif;
+    /* font-family: "Cinzel", serif; */
+    font-family: "Viora", serif;
+    white-space: nowrap;
 }
 
 
@@ -72,23 +92,57 @@ h1 {
         height: auto;
         object-fit: cover;
         width: 100%;
+        filter: saturate(78%);
     }
 }
 
 
 /* HOMEPAGE */
 .homepage {
-    font-family: "Satisfy", cursive;
+    position: relative;
     font-size: 20px;
+    margin-top: 30px;
     display: flex;
-    width: 100%;
-    flex: 1;
+    flex-direction: column;
     justify-content: center;
+    align-self: center;
+    justify-self: center;
     align-items: center;
     background-color: #ffffff;
+    max-width: 900px;
 }
 
-.box {
+.susan-solo {
+    position: absolute;
+    right: 56px;
+    bottom: 52px;
+    height: 39%;
+    display: flex;
+}
+.violet-solo {
+    position: absolute;
+    right: 140px;
+    bottom: 52px;
+    height: 39%;
+    display: flex;
+}
+
+.chardon-solo {
+    position: absolute;
+    left: 126px;
+    bottom: 52px;
+    height: 39%;
+    display: flex;
+}
+.bouquet-orange {
+    position: absolute;
+    left: -50px;
+    bottom: 22px;
+    height: 39%;
+    display: flex;
+}
+
+.box-link {
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -116,6 +170,15 @@ h1 {
     }
 }
 
+.box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
 
 .wrapper {
     padding: 20px;
@@ -124,36 +187,142 @@ h1 {
     gap: 20px;
 }
 
-.icon{
+.icon {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background-color: var(--light-blue);
+    align-items: start;
+    width: 65px;
+    height: 80px;
     border-radius: 50px;
+
     & i {
         color: var(--dark-blue);
     }
+
     & img {
         max-width: 40px;
     }
 }
 
+.title-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+
+    & img {
+        max-width: 100px;
+    }
+}
+
+.bird-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    & img {
+        max-width: 200px;
+    }
+}
+
+
+.accordion-header .accordion-button {
+    font-size: 22px !important;
+}
 
 .content {
+    text-align: justify;
     margin-top: 20px;
-    max-width: 90%;
-    
     padding: 10px;
-    /* border-radius: 10px; */
-    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
-.list{
+
+.list {
     list-style: none;
     margin: 0;
+
     & li:not(:last-child) {
-    margin-bottom: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.content {
+
+    /* & .line:nth-child(1) {
+        &::after {    
+            width: 100px;
+            height: 80px;
+            background: url('../images/flowers/black_eyed_susan_bouquet.png') no-repeat;        
+            background-size: 100px 80px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    } */
+    & .line.cb {
+        &::after {
+            width: 350px;
+            height: 300px;
+            background: url('../images/flowers/chardon_bouquet.png') no-repeat;
+            background-size: 350px 300px;
+            right: 0;
+        }
+    }
+    & .line.bv {
+        &::after {
+            width: 260px;
+            height: 410px;
+            background: url('../images/flowers/bouquet_violet.png') no-repeat;
+            background-size: 260px 410px;
+            left: 65px;
+            top: 30px;
+        }
+    }
+    & .line.os {
+        &::after {
+            width: 220px;
+            height: 300px;
+            background: url('../images/flowers/fleur_orange_solo.png') no-repeat;
+            background-size: 220px 300px;
+            right: 0;
+            top: -50px;
+        }
+    }
+    & .line.sb {
+        &::after {
+            width: 300px;
+            height: 218px;
+            background: url('../images/flowers/black_eyed_susan_bouquet.png') no-repeat;
+            background-size: 300px 218px;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 20px;
+        }
+    }
+}
+
+.line {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        opacity: 0.4;
+    }
+
+    &>div:last-child {
+        flex: 1;
     }
 }
 
@@ -167,5 +336,25 @@ h1 {
 
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
+
+        &.three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.hide {
+    display: none;
+}
+
+/* PHONES SPECIFICITIES !! */
+
+@media screen and (max-width: 500px) {
+    h1 {
+        font-size: 33px;
     }
 }

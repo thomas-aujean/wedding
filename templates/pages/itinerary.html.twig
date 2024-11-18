@@ -1,154 +1,273 @@
 {% extends "base.html.twig" %}
 {% block body %}
 	<section>
-		<h1>{{ title }}</h1>
+		<div class="title-img">
+			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
+		</div>
+
+		<h1>{{ title|trans }}</h1>
 
 		<div class="content">
-			<h2>Friday July 11, 2025</h2>
-
-			<p>Choose your own adventure</p>
-
-			<p>We recommend:</p>
-
-			<ul class="list">
-				<li>Check-into accommodations: HF Adventure center (cabins or campsite), Clarion Inn, or bnb in Harpers Ferry</li>
-				<li>Explore downtown Harpers Ferry, hike Maryland Heights</li>
-				<li>Try a local restaurant</li>
-				<li>Live music at The Barn or beers at Harpers Ferry Brewery</li>
-			</ul>
 
 
-			<p>
-				For those who wish to visit Harpers Ferry National Historical Park (“downtown”): Parking is at 171 Shoreline Drive, 
-																Harpers Ferry, WV 25425 and from there you will take a shuttle bus downtown.
-			</p>
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<b>Friday July 11, 2025</b>
+						</button>
+					</h2>
+					<div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p>{{ choose|trans }}</p>
+							<p>{% trans %}itinerary_1{% endtrans %}</p>
+							<ul>
+								<li>Check-into accommodations: HF Adventure center (cabins or campsite), Clarion Inn, or other bnb in Harpers Ferry or Charles Town</li>
+								<li>Explore downtown Harpers Ferry, hike Maryland Heights</li>
+								<li>Try a local restaurant</li>
+								<li>Live music at The Barn or beers at Harpers Ferry Brewery</li>
+							</ul>
 
-			<p>
-				To access Maryland Heights hiking trail:</p>
-			<ul class="list">
-				<li>go to downtown HF</li>
-				<li>
-					> Cross the bridge over the confluence</li>
-				<li>
-					> turn left once you go down the stairs from the bridge</li>
-				<li>
-					> walk the C&O canal path approx. 1km*</li>
-				<li>
-					> turn right towards the mountain, you will see a sign with a map of Maryland Heights</li>
-				<li>
-					> follow the trail up to the overlook</li>
-			</ul>
+							<p>For those who wish to visit Harpers Ferry National Historical Park (“downtown”): Parking is at
+								<b>171 Shoreline Drive, Harpers Ferry, WV 25425</b>
+								and from there you will take a shuttle bus downtown.
+							</p>
 
-			<h3>Restaurant recommendations:</h3>
+							<p>To access Maryland Heights hiking trail: go to downtown HF > Cross the walking bridge over the confluence > turn left once you go down the stairs from the bridge > walk the C&O canal path approx. 1km* > turn right towards the mountain, you will see a sign with a map of Maryland Heights > follow the trail up to the overlook</p>
 
-			<ul class="list">
-				<li>
-					<a href="https://kelleyfarmkitchen.com/" target="_blank">Vegan - Kelly Farm Kitchen</a>
-				</li>
-				<li>
-					<a href="https://www.snallygasterscafe.com/" target="_blank">Snallygaster’s café & wine bar</a>
-				</li>
-				<li>
-					<a href="https://rabbitholewv.com/" target="_blank">The Rabbit Hole Gastropub</a>
-				</li>
-				<li>
-					Guide House Grill food truck (on-site at HF Adventure Center)
-				</li>
-			</ul>
+							<i>Restaurant recommendations:</i>
+							<br>
+							<a href="https://kelleyfarmkitchen.com/" target="_blank">Vegan - Kelly Farm Kitchen</a>
+							<br>
+							<a href="https://www.snallygasterscafe.com/">Snallygaster’s café & wine bar</a>
+							<br>
+							<a href="https://rabbitholewv.com/">The Rabbit Hole Gastropub</a>
+							<br>
+							Guide House Grill food truck (on-site at HF Brewery/Adventure Center)
+							<br>
+							<br>
+							<i>Relevant links:</i>
+							<br>
+							<a href="https://www.nps.gov/hafe/index.htm">Harpers Ferry National Historical Park</a>
+							<br>
+							<a href="https://www.alltrails.com/trail/us/west-virginia/maryland-heights-trails">Maryland Heights hike</a>
+							<br>
+							<a href="https://www.barnofharpersferry.com/">The Barn (bar and live music venue)</a>
+							<br>
+							<a href="https://harpersferrybrewing.com/">Harpers Ferry Brewing</a>
+							<br>
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<b>Saturday July 12, 2025</b>
+						</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
 
-			<h3>Relevant links</h3>
+							<p>Transportation will be provided to and from the wedding for those staying off-site.
+							</p>
 
-			<ul class="list">
-				<li>
-					<a href="https://www.nps.gov/hafe/index.htm" target="_blank">Harpers Ferry National Historical Park</a>
-				</li>
-				<li>
-					<a href="https://www.alltrails.com/trail/us/west-virginia/maryland-heights-trails" target="_blank">Maryland Heights hike</a>
-				</li>
-				<li>
-					<a href="https://www.barnofharpersferry.com/" target="_blank">The Barn (bar and live music venue)</a>
-				</li>
-				<li>
-					<a href="https://harpersferrybrewing.com/" target="_blank">Harpers Ferry Brewing</a>
-				</li>
-			</ul>
+							<p>
+								<b>8:30-11:30:</b>
+								Breakfast buffet on-site for guests camping at HF Adventure Center
+								<br>
+								Location: Picnic tables at cabins 1-6</p>
 
 
-			<h2>Saturday July 12, 2025</h2>
+							<p>
+								<b>9:00-10:00:</b>
+								Outdoor yoga at HF Adventure Center (everyone welcome! RSVP required)
+								<br>
+								Meet at Harpers Ferry Brewery “Sunset Deck” at 8:50am
+							</p>
 
-			<ul class="list">
-				<li>
 
-					9:30-10:30: Outdoor yoga at HF Adventure Center (everyone welcome! RSVP here)
-								Meet at ***
-				</li>
+							<p>
+								<b>1:00:</b>
+								Bridal and groom’s parties, getting ready
+								<br>
+								Bridal party: please meet at location*
+								<br>
+								Groom party: please meet at location*</p>
 
-				<li>
-					11:00-1:00: Brunch buffet on-site for guests camping at HF Adventure Center 
-										Location:
-				</li>
-				<li>
-					1:00: Getting ready
-										Bridal party: please meet at location*
-										Groom party: please meet at location*
-				</li>
-				<li>
+							<p>
+								<b>3:00-10:00:</b>
+								Wedding ceremony and reception at Harpers Ferry Brewing</p>
 
-					3:00-3:45: Wedding ceremony at HF Brewing
-				</li>
-				<li>
-					4:00-5:30: Cocktail hour/Apéro
-				</li>
-				<li>
-					5:30-7:00: Family style dinner (please confirm menu selection in RSVP)
-				</li>
-				<li>
-					7:00 7:30: speeches
-				</li>
-				<li>
-					7:30-8:00: first dances
-				</li>
-				<li>
-					8:00-10:00: concert, The Woodshedders
-				</li>
-				<li>
-					10 pm +: After party at cabin area
-				</li>
-			</ul>
-			<h2>Sunday July 13, 2025</h2>
+							<p>
+								<b>10 pm onward:</b>
+								After party at cabins 1-6
+							</p>
 
-			<p>If checking out on this day, check-out time is 11am</p>
+							TODO : !! Shuttle schedule:
+						<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
 
-				<ul class="list">
-				<li>
-					9:30-11:00: Breakfast buffet on-site for those camping
-				</li>
-				<li>
-					11:30: River tubing or zip lining (Please select your choice on RSVP)
-					See details for each activity <a href="https://harpersferryadventurecenter.com/adventures/" target="_blank">here</a>. <br>
-					If you’re going on the river, you will need to wear: <br>
-					Water shoes (that won’t fall off, not flip flops)<br>
-					Bathing suit<br>
-					Hat/Sunglasses/Sun protection<br>
-					You might want to bring:<br>
-					Waterproof bag for wallet, phone, lighter and other things... <br>
-					HF Adventure Center has a key check to keep your keys safe till your return.<br>
-					Keep a towel and a dry change of clothes on-site for when you return<br><br>
-				
-					** We will provide floating coolers with water, beer, and other drinks to enjoy during the float!<br><br>
-					
-					After tubing/zip lining, there is a food truck at the brewery where you can stop for lunch.
-					Onwards: A relaxing afternoon… have a nap or meet at the brewery to continue festivities
-				</li>
-				<li>
-					7:00: Dinner - BBQ at cabin area
-				</li>
-			</ul>
-												
-											
-			<h2>Monday July 14, 2025</h2>
-			11am check-out
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							<b>Sunday July 13, 2025</b>
+						</button>
+					</h2>
+					<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<p>
+								<i>If checking out on this day, check-out time is 11am for those camping or in cabins, and also for the Clarion Inn</i>
+							</p>
+
+							<p>
+								<b>8:30-10:30:</b>
+								Breakfast buffet on-site for those camping or in cabins
+							</p>
+							<p>
+								<b>10:30:</b>
+								Check-in for
+
+
+								<u>
+									<a data-bs-toggle="modal" data-bs-target="#tubingModal" style="cursor:pointer;">
+										whitewater tubing
+									</a>
+								</u>
+
+								or
+								<u>
+									<a data-bs-toggle="modal" data-bs-target="#zipModal" style="cursor:pointer;">
+										zip lining
+									</a>
+								</u>
+								next to main office at Harpers Ferry Adventure Center (Please select your choice of activity on RSVP)
+							</p>
+
+							See more details for each activity
+							<a href="https://harpersferryadventurecenter.com/adventures/" target="_blank">here</a>
+							<br>
+							<a href="https://harpersferryadventurecenter.com/know-before-you-go/" taget="_blank">Activity FAQ</a>
+							<br>
+							<br>
+
+							<i class="text-right">
+								For those with kids younger than 7 years old who cannot go on the river or zipline, the parents of the bride invite you to their home to swim in the pool !
+								<br>
+								Parental supervision required.
+							</i>
+							<br>
+							<br>
+							<p>After tubing/ziplining, there is a food truck (Guide House Grill) at the brewery/adventure center where you can stop for lunch.</p>
+							<p>For those staying until Monday: we will have a BBQ at 7:00 pm at the cabin area.</p>
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			{{ include('pages/_map.html.twig') }}
 
 		</div>
 	</section>
+
+
+	<!-- Modals -->
+	<div class="modal fade" id="tubingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">
+						<b>Whitewater tubing:</b>
+					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>
+						<i>Depending on river conditions, your float will take approximately 1.5 to 2 hours.</i>
+					</p>
+
+					<p>Guests must check-in no later than 30 minutes prior to their scheduled time. (Reservation 11am /
+						<u>check-in next to main office at 10:30 am</u>)</p>
+
+					<b>Requirements:</b>
+					<ul>
+						<li>Whitewater tubing guests must be excellent swimmers and fairly physically fit.</li>
+						<li>Kids must be at least 12 years old.
+						</li>
+						<li>Anyone under 18 must be accompanied by an adult.</li>
+						<li>All guests must complete the liability waiver.</li>
+					</ul>
+
+					<b>What to wear:</b>
+					<br>
+
+					<ul>
+						<li>Water shoes (that won’t fall off, no flip flops)</li>
+						<li>Bathing suit</li>
+						<li>Hat/Sunglasses/Sun protection</li>
+						<li>You might want to bring: Waterproof bag for wallet, phone, lighter and other things.</li>
+					</ul>
+
+					<ul>
+
+						<li>HF Adventure Center has a free key check to keep your keys safe till your return.
+
+						</li>
+						<li>They also have a locker you may rent to keep valuables in.</li>
+						<li>Keep a towel and a dry change of clothes on-site for when you return</li>
+					</ul>
+					<P>We will provide floating coolers with water, beer, and other drinks to enjoy during the float!</P>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="zipModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="exampleModalLabel">
+						<b>Ziplining:</b>
+					</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<p>
+						<i>Your canopy tour will last between 1.5 and 2 hours.</i>
+					</p>
+					<p>Guests must check-in no later than 30 minutes prior to their scheduled time. (Reservation 11am /
+						<u>check-in next to main office at 10:30 am</u>)</p>
+					<b>Requirements:</b>
+					<br>
+					<ul>
+						<li>
+							Kids must be at least 7 years old and 70+ lbs.
+						</li>
+						<li>Anyone under 18 must be accompanied by an adult.</li>
+						<li>Max weight is 250 pounds.</li>
+						<li>All guests must complete the liability waiver
+						</li>
+					</ul>
+
+
+					<b>What to wear</b>
+					<br>
+					<ul>
+						<li>
+							Sneakers or closed-toe shoes required.
+						</li>
+						<li>
+							Avoid  loose clothing and tie hair back.
+						</li>
+						<li>
+							Athletic wear advised.
+						</li>
+					</ul>
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/VoWeAk4FZB4?si=REPN7RwW0XqpPo9_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

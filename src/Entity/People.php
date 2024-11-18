@@ -24,14 +24,20 @@ class People
     #[ORM\Column(length: 255)]
     private ?string $lastName = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $mealPreference = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $activity = null;
 
     #[ORM\Column(type: 'uuid')]
     private ?Uuid $uuid = null;
+
+    #[ORM\Column(nullable: true)]
+    private ?bool $yoga = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $location = null;
 
     public function getId(): ?int
     {
@@ -106,6 +112,30 @@ class People
     public function setUuid(Uuid $uuid): static
     {
         $this->uuid = $uuid;
+
+        return $this;
+    }
+
+    public function isYoga(): ?bool
+    {
+        return $this->yoga;
+    }
+
+    public function setYoga(?bool $yoga): static
+    {
+        $this->yoga = $yoga;
+
+        return $this;
+    }
+
+    public function getLocation(): ?string
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?string $location): static
+    {
+        $this->location = $location;
 
         return $this;
     }
