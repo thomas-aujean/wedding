@@ -6,16 +6,26 @@
 		</div>
 
 		<h1>{{ title|trans }}</h1>
+
 		<div class="content">
 			{{ form_start(form, {attr: {'novalidate': 'novalidate'}}) }}
 			{{ form_errors(form) }}
 
-			<div class="wrapper">
-				{{ form_row(form.firstName) }}
-				{{ form_row(form.lastName) }}
+			<div class="row">
+				<div class="col">
+					{{ form_row(form.firstName) }}
+				</div>
+				<div class="col">
+					{{ form_row(form.lastName) }}
+				</div>
 			</div>
 
-			{{ form_row(form.rsvp.isAttending, {'id': 'attendingSelect'}) }}
+			<div class="row">
+				<div class="col">
+
+					{{ form_row(form.rsvp.isAttending, {'id': 'attendingSelect'}) }}
+				</div>
+			</div>
 
 			<div class="text-center">
 				{{ form_row(form.submit) }}

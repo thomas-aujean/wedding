@@ -7,9 +7,6 @@ import './bootstrap.js';
  */
 import './styles/app.css';
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-
-
 
 (() => {
     const main = () => {
@@ -31,7 +28,6 @@ console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
         const displayFields = () => {
             attendingWrapper.classList.remove("hide");
         }
-
 
         if (rsvpSelect) {
             rsvpSelect.addEventListener('change', handleRsvp);

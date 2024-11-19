@@ -15,6 +15,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Translation\LocaleSwitcher;
+use Symfony\Component\Mime\Email;
+use Symfony\Component\Mailer\MailerInterface;
 
 class PagesController extends AbstractController
 {
@@ -51,8 +53,14 @@ class PagesController extends AbstractController
     public function rsvp(Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
     {
         $rsvp = $rsvpService->retrieve($request);
+
         if ($rsvp->isAttending()) {
-            return $this->redirectToRoute('rsvp_confirm', ['uuid' => $rsvp->getUuid()]);
+            if ($rsvpService->isComplete($rsvp)) {
+
+                return $this->redirectToRoute('rsvp_confirm', ['uuid' => $rsvp->getUuid()]);
+            }
+
+            return $this->redirectToRoute('rsvp_attend', ['uuid' => $rsvp->getUuid()]);
         }
         
         $people = new People();
@@ -87,6 +95,7 @@ class PagesController extends AbstractController
 
         return $this->render('pages/rsvp_decline.html.twig', [
             'title' => 'rsvp',
+            'rsvp' => $rsvp,
         ]);
     }
 
@@ -112,9 +121,21 @@ class PagesController extends AbstractController
     }
 
     #[Route('/rsvp/confirm/{uuid}', name: 'rsvp_confirm')]
-    public function rsvpConfirm(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
+    public function rsvpConfirm(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService, MailerInterface $mailer): Response
     {
         $people = new people();
+        // $email = (new Email())
+        //     ->from('hello@example.com')
+        //     ->to('thomas.aujean@gmail.com')
+        //     //->cc('cc@example.com')
+        //     //->bcc('bcc@example.com')
+        //     //->replyTo('fabien@example.com')
+        //     //->priority(Email::PRIORITY_HIGH)
+        //     ->subject('Time for Symfony Mailer!')
+        //     ->text('Sending emails is fun again!')
+        //     ->html('<p>See Twig integration for better HTML integration!</p>');
+
+        // $mailer->send($email);
         $form = $this->createForm(PeopleType::class, $people);
         $form->handleRequest($request);
 
@@ -129,6 +150,7 @@ class PagesController extends AbstractController
             'title' => 'A très vite !',
             'rsvp' => $rsvp,
             'form' => $form,
+            'first' => $rsvp->getFirst(),
         ]);
     }
 
@@ -149,5 +171,20 @@ class PagesController extends AbstractController
         $localeSwitcher->setLocale($request->getSession()->get('_locale'));
 
         return $this->redirect($request->headers->get('referer'));
+    }
+
+    
+    #[Route('/reset/{uuid}', name: 'reset')]
+    public function reset(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        foreach ($rsvp->getPeople() as $person) {
+            $entityManager->remove($person);
+            $entityManager->flush();
+        }
+        $entityManager->remove($rsvp);
+        $entityManager->flush();
+        $request->getSession()->remove('rsvp');
+
+        return $this->redirectToRoute('rsvp');
     }
 }

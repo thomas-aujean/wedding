@@ -42,30 +42,32 @@ class PeopleType extends AbstractType
             ])
             ->add('mealPreference', ChoiceType::class, [
                 'choices'  => [
-                    "No, I'll eat whatever is in front of me" => 'meat',
-                    'I do not feed myself with the living' => 'vegan',
+                    "Plutôt viande " => 'meat',
+                    'Plutôt poisson' => 'fish',
+                    'Plutôt crever' => 'vegan',
                 ],
-                'label' => 'Do you have any food preference ?'
+                'label' => 'Dinner selection'
             ])
             ->add('activity', ChoiceType::class, [
                 'choices'  => [
-                    'Zip line sounds fun' => 'zip',
-                    'keep floating' => 'float',
+                    'Zip lining' => 'zip',
+                    'River tubing' => 'float',
                 ],
                 'label' => 'Activity'
             ])
             ->add('yoga', ChoiceType::class, [
                 'choices'  => [
-                    'OMG yeeees!' => true,
-                    'Do you even know me?' => false,
+                    'Namasté' => true,
+                    'Nah, I’mma stay in bed' => false,
                 ],
-                'label' => 'Would you join us for yoga?'
+                'label' => 'Outdoor Yoga'
             ])
             ->add('location', ChoiceType::class, [
                 'choices'  => [
-                    'Clarion' => 'hotel',
-                    'Cabin' => 'cabin',
-                    'Nonayobiznes' => 'other',
+                    'Clarion Hotel' => 'hotel',
+                    'Small cabin' => 'small_cabin',
+                    'Large Cabin' => 'large_cabin',
+                    'Other' => 'other',
                 ],
                 'label' => 'Where will you be staying?'
             ])

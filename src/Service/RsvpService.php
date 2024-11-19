@@ -6,6 +6,8 @@ use App\Controller\PeopleController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Rsvp;
 use App\Entity\People;
+use App\Repository\PeopleRepository;
+use App\Repository\RsvpRepository;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\Uid\Uuid;
 use Doctrine\ORM\EntityManagerInterface;
@@ -25,8 +27,11 @@ class RsvpService
     const LOCATION_CAMP = 'camp';
     const LOCATION_OTHER = 'other';
 
-    public function __construct(TranslatorInterface $translator)
-    {
+    public function __construct(
+        TranslatorInterface $translator,
+        protected RsvpRepository $rsvpRepository,
+        protected PeopleRepository $peopleRepository
+    ) {
         $this->translator = $translator;
     }
 
@@ -51,13 +56,13 @@ class RsvpService
             self::MEAL_ALL => 'All you can eat',
         ];
     }
-/**
- * 
- */
-public function displayMealPreference(string $preference): string 
-{
-    return $this->mealPreferences()[$preference];
-}
+    /**
+     * 
+     */
+    public function displayMealPreference(string $preference): string
+    {
+        return $this->mealPreferences()[$preference];
+    }
 
     /**
      * Handles RSVP main response from the user.
@@ -66,11 +71,12 @@ public function displayMealPreference(string $preference): string
     {
         $people->getRsvp()->setUuid(Uuid::v4());
         $people->getRsvp()->setIpAddress($userIp);
+        $people->getRsvp()->addPerson($people);
         $entityManager->persist($people->getRsvp());
 
         $people->setUuid(Uuid::v4());
 
-        
+
         $entityManager->persist($people);
         $entityManager->flush();
 
@@ -83,8 +89,12 @@ public function displayMealPreference(string $preference): string
     public function retrieve(Request $request): Rsvp
     {
 
-       if ($request->getSession()->get('rsvp')) {
-        return $request->getSession()->get('rsvp');
+        $sessionRsvp = $request->getSession()->get('rsvp');
+        if (!is_null($sessionRsvp) && !is_null($this->rsvpRepository->find($sessionRsvp->getId()))) {
+            $rsvp = $this->rsvpRepository->find($sessionRsvp->getId());
+            $request->getSession()->set('rsvp', $rsvp);
+
+            return $rsvp;
         }
 
         // ADD IP CHECK !!
@@ -93,10 +103,27 @@ public function displayMealPreference(string $preference): string
         return new Rsvp();
     }
 
+    /**
+     * 
+     */
     public function handlePreference(People $people, EntityManagerInterface $entityManager)
     {
         $people->setUuid(Uuid::v4());
         $entityManager->persist($people);
         $entityManager->flush();
+    }
+
+    /**
+     * 
+     */
+    public function isComplete(Rsvp $rsvp): bool
+    {
+        $mainPerson = $rsvp->getFirst();
+        if ($mainPerson === false) {
+            throw new \Exception('Houston, we have a problem !');
+        }
+        $mainPerson = $this->peopleRepository->find($mainPerson->getId());
+
+        return !is_null($mainPerson->getActivity()) || !is_null($mainPerson->getLocation()) || !is_null($mainPerson->getMealPreference()) || !is_null($mainPerson->isYoga());
     }
 }

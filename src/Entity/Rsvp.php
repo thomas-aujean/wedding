@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\RsvpRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
@@ -34,9 +35,13 @@ class Rsvp
     #[ORM\Column(length: 255)]
     private ?string $ip_address = null;
 
+    #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
+    private ?\DateTimeImmutable $createdAt = null;
+
     public function __construct()
     {
         $this->people = new ArrayCollection();
+        $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
@@ -88,6 +93,14 @@ class Rsvp
         return $this->people;
     }
 
+    /**
+     * @return People
+     */
+    public function getFirst()
+    {
+        return $this->people->first();
+    }
+
     public function addPerson(People $person): static
     {
         if (!$this->people->contains($person)) {
@@ -118,6 +131,18 @@ class Rsvp
     public function setIpAddress(string $ip_address): static
     {
         $this->ip_address = $ip_address;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): static
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

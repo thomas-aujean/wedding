@@ -8,5 +8,9 @@
 		<h1>{{ title|trans }}</h1>
 
 		It's ok if your life is sad, we still love you !
+
+		<div class="text-end">
+			<a href="{{ path('reset', {'uuid': rsvp.uuid}) }}">J'ai changé d'avis !</a>
+		</div>
 	</section>
 {% endblock %}
