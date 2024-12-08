@@ -18,13 +18,17 @@ class RsvpService
 
     const MEAL_VEGAN = 'vegan';
     const MEAL_ALL = 'meat';
+    const MEAL_FISH = 'fish';
 
-    const ACTIVITY_ZIP = 'zipline';
-    const ACTIVITY_TUBING = 'tubing';
+    const ACTIVITY_ZIP = 'zip';
+    const ACTIVITY_TUBING = 'float';
+    const ACTIVITY_POOL = 'pool';
+    const ACTIVITY_OTHER = 'other';
 
     const LOCATION_HOTEL = 'hotel';
-    const LOCATION_CABIN = 'cabin';
-    const LOCATION_CAMP = 'camp';
+    const LOCATION_CABIN_S = 'small_cabin';
+    const LOCATION_CABIN_L = 'large_cabin';
+    const LOCATION_CAMP = 'campsite';
     const LOCATION_OTHER = 'other';
 
     public function __construct(
@@ -52,8 +56,21 @@ class RsvpService
     public function mealPreferences(): array
     {
         return [
-            self::MEAL_VEGAN => 'Delicious vegan meal',
-            self::MEAL_ALL => 'All you can eat',
+            self::MEAL_VEGAN => 'Vegan',
+            self::MEAL_ALL => 'Meat',
+            self::MEAL_FISH => 'Fish',
+        ];
+    }
+
+    /**
+     * Returns available attending responses.
+     */
+    public function formMealPreferences(): array
+    {
+        return [
+            'Vegan' => self::MEAL_VEGAN,
+            'Meat' => self::MEAL_ALL,
+            'Fish' => self::MEAL_FISH,
         ];
     }
     /**

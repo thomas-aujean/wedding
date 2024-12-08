@@ -7,10 +7,14 @@
 
 		<h1>{{ title|trans }}</h1>
 
-		It's ok if your life is sad, we still love you !
+		<div class="content">
+			We're sorry you can 't make it.
+			<br>
+			You will be missed!
+		</div>
 
-		<div class="text-end">
-			<a href="{{ path('reset', {'uuid': rsvp.uuid}) }}">J'ai changé d'avis !</a>
+		<div class="text-center m-2">
+			<a class="btn btn-warning" href="{{ path('reset', {'uuid': rsvp.uuid}) }}">I made a mistake! Start over</a>
 		</div>
 	</section>
 {% endblock %}

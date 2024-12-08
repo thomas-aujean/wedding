@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use App\Entity\Rsvp;
 use App\Entity\People;
+use App\Service\RsvpService;
+use Symfony\Contracts\Translation\TranslatorInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -16,6 +18,16 @@ use Symfony\Component\Uid\Uuid;
 
 class PeopleController extends AbstractController
 {
+    
+    private $service;
+    private $translator;
+
+    public function __construct(RsvpService $service, TranslatorInterface $translator)
+    {
+        $this->service = $service;
+        $this->translator = $translator;
+    }
+
     #[Route('/people/edit/{uuid}', name: 'people_edit')]
     public function peopleEdit(People $people, Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -23,20 +35,19 @@ class PeopleController extends AbstractController
             ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
             ->add('mealPreference', ChoiceType::class, [
-                'choices'  => [
-                    'I want meat' => 'meat',
-                    'flowers for me' => 'vegan',
-                ],
-                'label' => 'What you eat'
+                'choices'  => $this->service->formMealPreferences(),
+                'label' => 'Dinner selection'
             ])
             ->add('activity', ChoiceType::class, [
                 'choices'  => [
-                    'Zip line sounds fun' => 'zip',
-                    'keep floating' => 'float',
+                    'Zip lining' => 'zip',
+                    'Whitewater tubing' => 'float',
+                    'Pool day' => 'pool',
+                    'None/Other' => 'other',
                 ],
                 'label' => 'Activity'
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
+            ->add('submit', SubmitType::class, ['label' => 'Submit'])
             ->getForm();
 
         $form->handleRequest($request);

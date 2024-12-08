@@ -19,8 +19,10 @@
 					</h2>
 					<div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<p>{{ choose|trans }}</p>
-							<p>{% trans %}itinerary_1{% endtrans %}</p>
+							<p>
+								<i>{{ choose|trans }}</i>
+							</p>
+							<p>{% trans %}itinerary_1{% endtrans %}:</p>
 							<ul>
 								<li>Check-into accommodations: HF Adventure center (cabins or campsite), Clarion Inn, or other bnb in Harpers Ferry or Charles Town</li>
 								<li>Explore downtown Harpers Ferry, hike Maryland Heights</li>
@@ -28,12 +30,16 @@
 								<li>Live music at The Barn or beers at Harpers Ferry Brewery</li>
 							</ul>
 
+							<p>
+								For immediate family and the wedding party: The ceremony rehearsal will be held at the wedding venue at 4 pm. Dinner at Dan and Diane's to follow.
+							</p>
+
 							<p>For those who wish to visit Harpers Ferry National Historical Park (“downtown”): Parking is at
 								<b>171 Shoreline Drive, Harpers Ferry, WV 25425</b>
 								and from there you will take a shuttle bus downtown.
 							</p>
 
-							<p>To access Maryland Heights hiking trail: go to downtown HF > Cross the walking bridge over the confluence > turn left once you go down the stairs from the bridge > walk the C&O canal path approx. 1km* > turn right towards the mountain, you will see a sign with a map of Maryland Heights > follow the trail up to the overlook</p>
+							<p>To access Maryland Heights hiking trail: go to downtown HF > Cross the walking bridge over the rivers > turn left once you go down the stairs from the bridge > walk the C&O canal path approx. 1km* > turn right towards the mountain, you will see a sign with a map of Maryland Heights > follow the trail up to the overlook</p>
 
 							<i>Restaurant recommendations:</i>
 							<br>
@@ -56,7 +62,8 @@
 							<br>
 							<a href="https://harpersferrybrewing.com/">Harpers Ferry Brewing</a>
 							<br>
-							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
+							<br>
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
 						</div>
 					</div>
 				</div>
@@ -69,31 +76,34 @@
 					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 
-							<p>Transportation will be provided to and from the wedding for those staying off-site.
+							<p>
+								<i>Transportation will be provided to and from the wedding for those staying off-site.</i>
 							</p>
 
 							<p>
 								<b>8:30-11:30:</b>
 								Breakfast buffet on-site for guests camping at HF Adventure Center
 								<br>
-								Location: Picnic tables at cabins 1-6</p>
+								<i>Location: Picnic tables at cabins 1-6</i>
+							</p>
 
 
 							<p>
 								<b>9:00-10:00:</b>
 								Outdoor yoga at HF Adventure Center (everyone welcome! RSVP required)
 								<br>
-								Meet at Harpers Ferry Brewery “Sunset Deck” at 8:50am
+								<i>Meet at Harpers Ferry Brewery Sunset Deck at 8:50am</i>
 							</p>
 
 
 							<p>
-								<b>1:00:</b>
+								<b>12:00:</b>
 								Bridal and groom’s parties, getting ready
 								<br>
-								Bridal party: please meet at location*
+								<i>Bridal party: please meet at location*</i>
 								<br>
-								Groom party: please meet at location*</p>
+								<i>Groom party: please meet at location*</i>
+							</p>
 
 							<p>
 								<b>3:00-10:00:</b>
@@ -104,8 +114,8 @@
 								After party at cabins 1-6
 							</p>
 
-							TODO : !! Shuttle schedule:
-						<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
+							{# TODO : !! Shuttle schedule: #}
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
 
 						</div>
 					</div>
@@ -154,7 +164,7 @@
 							<br>
 
 							<i class="text-right">
-								For those with kids younger than 7 years old who cannot go on the river or zipline, the parents of the bride invite you to their home to swim in the pool !
+								For those with kids younger than 7 years old who cannot go on the river or zipline, the parents of the bride invite you to their home to swim in the pool!
 								<br>
 								Parental supervision required.
 							</i>
@@ -162,13 +172,13 @@
 							<br>
 							<p>After tubing/ziplining, there is a food truck (Guide House Grill) at the brewery/adventure center where you can stop for lunch.</p>
 							<p>For those staying until Monday: we will have a BBQ at 7:00 pm at the cabin area.</p>
-							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>
+
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
+
 						</div>
 					</div>
 				</div>
 			</div>
-			{{ include('pages/_map.html.twig') }}
-
 		</div>
 	</section>
 

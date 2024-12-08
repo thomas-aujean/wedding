@@ -8,30 +8,33 @@
 		<h1>{{ title }}</h1>
 
 		<div class="content">
-		
-			<p>On à trop hâte de te voir à notre mariage !</p>
-			<p>Voilà le récapitulatif de ce qu tu nous a dit</p>
-			<p>Note bien cette URL si jamais tu compte modifier des choses: <br> {{ app.request.uri }}</p>
-			<p>Merci d'ajouter toutes les personnes qui viendront avec toi au mariage </p>
+
+			<p>Here is a recap of your selections.</p>
+			<p>
+				Feel free to email us if you want to make any changes.
+				<br>
+				aujean.alquist@gmail.com
+			</p>
+			<p>Please add other guests in your party.</p>
 
 			<div class="wrapper three">
 				{% for person in rsvp.people %}
 					<div class="box">
 						<div class="text-center">
-							{{ person.lastName|upper }}
 							{{ person.firstName|capitalize }}
+							{{ person.lastName|upper }}
 						</div>
 						<br>
-						Repas :
+						Meal :
 						{{ person|meal() }}
 						<br>
-						Activitée :
+						Activity :
 						{{ person|activity() }}
 						<br>
 						Yoga :
 						{{ person|yoga() }}
 						<br>
-						Location :
+						Accomodation :
 						{{ person|location() }}
 						<br>
 						{% if person.id is not same as(first.id)  %}
@@ -42,6 +45,11 @@
 					</div>
 				{% endfor %}
 			</div>
+
+			<p>
+				Dress code: We want you to be comfortable at our wedding. The dress code is
+			<a data-bs-toggle="modal" data-bs-target="#dressCode" style="cursor:pointer;">mountain chic</a>. It will be hot this time of year, and you’ll be walking on gravel and dancing on grass, so keep that in mind when choosing what to wear.
+			</p>
 
 
 			<!-- Button trigger modal -->
@@ -89,8 +97,24 @@
 			</div>
 		</div>
 
-<div class="text-end">
-<a href="{{ path('reset', {'uuid': rsvp.uuid}) }}">J'ai changé d'avis !</a>
-</div>
+		<div class="text-center m-2">
+			<a class="btn btn-warning" href="{{ path('reset', {'uuid': rsvp.uuid}) }}">I made a mistake! Start over</a>
+		</div>
 	</section>
+
+	<div class="modal fade" id="dressCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+			
+			<img src="{{ asset('images/dress_code.png') }}" class="img-fluid" alt="">
+			</div>
+		</div>
+	</div>
+</div>
+
+
 {% endblock %}

@@ -9,9 +9,9 @@
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Slogest';
-    src: url('../fonts/Slogest.otf') format('opentype');
+@font-face {    
+    font-family: 'Swingly';
+    src: url('../fonts/Swingly.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -34,13 +34,18 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    font-family: "Slogest", sans-serif;
-    font-size: 20px;
+    font-family: "Swingly", sans-serif;
+    font-size: 18px;
     flex: 1;
 
     & h1 {
         text-align: center;
         color: var(--dark-green);
+    }
+
+    & a {
+        color: var(--dark-green) !important;
+        font-weight: bold;
     }
 
     & section {
@@ -53,7 +58,7 @@ main {
 }
 
 h1 {
-
+    font-size: 45px;
     /* font-family: "Cinzel", serif; */
     font-family: "Viora", serif;
 }
@@ -92,7 +97,7 @@ h1 {
         height: auto;
         object-fit: cover;
         width: 100%;
-        filter: saturate(78%);
+        filter: saturate(80%);
     }
 }
 
@@ -115,14 +120,15 @@ h1 {
 .susan-solo {
     position: absolute;
     right: 56px;
-    bottom: 52px;
+    bottom: 0;
     height: 39%;
     display: flex;
 }
+
 .violet-solo {
     position: absolute;
     right: 140px;
-    bottom: 52px;
+    bottom: 0;
     height: 39%;
     display: flex;
 }
@@ -130,14 +136,15 @@ h1 {
 .chardon-solo {
     position: absolute;
     left: 126px;
-    bottom: 52px;
+    bottom: 0;
     height: 39%;
     display: flex;
 }
+
 .bouquet-orange {
     position: absolute;
-    left: -50px;
-    bottom: 22px;
+    left: -40px;
+    bottom: 0;
     height: 39%;
     display: flex;
 }
@@ -174,10 +181,18 @@ h1 {
     display: flex;
     flex-direction: column;
     background-color: white;
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 18px;
+    
+    & .title {
+        font-size: 20px;
+        text-align: center;
+        text-decoration: underline;
+        margin-bottom: 5px;
+    }
 }
 
 .wrapper {
@@ -223,6 +238,7 @@ h1 {
     align-items: center;
     width: 100%;
     margin: 20px 0;
+
     & img {
         max-width: 200px;
     }
@@ -237,6 +253,10 @@ h1 {
     text-align: justify;
     margin-top: 20px;
     padding: 10px;
+    & a {
+        color: var(--dark-green) !important;
+        font-weight: bold;
+    }
 }
 
 .list {
@@ -276,6 +296,7 @@ h1 {
             right: 0;
         }
     }
+
     & .line.bv {
         &::after {
             width: 260px;
@@ -286,6 +307,7 @@ h1 {
             top: 30px;
         }
     }
+
     & .line.os {
         &::after {
             width: 220px;
@@ -296,6 +318,7 @@ h1 {
             top: -50px;
         }
     }
+
     & .line.sb {
         &::after {
             width: 300px;
@@ -319,6 +342,7 @@ h1 {
         position: absolute;
         display: inline-block;
         opacity: 0.4;
+        z-index: -1;
     }
 
     &>div:last-child {
@@ -330,9 +354,9 @@ h1 {
 
 @media screen and (min-width: 600px) {
 
-    .main-pic {
+    /* .main-pic {
         max-width: 50%;
-    }
+    } */
 
     .wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -356,5 +380,58 @@ h1 {
 @media screen and (max-width: 500px) {
     h1 {
         font-size: 33px;
+    }
+
+
+    .susan-solo {
+        position: absolute;
+        right: 0;
+        height: 39%;
+        display: flex;
+        width: 50px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    .violet-solo {
+        position: absolute;
+        right: 10%;
+        height: 39%;
+        display: flex;
+        width: 44px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    .chardon-solo {
+        position: absolute;
+        left: 20%;
+        height: 39%;
+        display: flex;
+        width: 33px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    
+    .bouquet-orange {
+        position: absolute;
+        left: 0;
+        height: 39%;
+        display: flex;
+        width: 50px;
+        & img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
     }
 }

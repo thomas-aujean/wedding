@@ -32,28 +32,30 @@ class RsvpExtension extends AbstractExtension
     public function attendYoga(People $people): string
     {
         if ($people->isYoga()) {
-            return 'Vous allez faire du yoga';
+            return 'Yes';
         }
 
-        return 'Pas de yoga';
+        return 'No';
     }
 
     public function activity(People $people): string
     {
-        if ($people->getActivity() === RsvpService::ACTIVITY_TUBING) {
-            return 'On va descendre la rivioère !!';
-        }
-
-        return 'Zip line !!!';
+        return match ($people->getActivity()) {
+            RsvpService::ACTIVITY_ZIP => 'Zipline',
+            RsvpService::ACTIVITY_TUBING => 'Whitewater tubing',
+            RsvpService::ACTIVITY_POOL => 'Pool day',
+            RsvpService::ACTIVITY_OTHER => 'Other',
+        };
     }
 
     public function location(People $people): string
     {
         return match ($people->getLocation()) {
-            RsvpService::LOCATION_HOTEL => 'Hotel for you',
-            RsvpService::LOCATION_CABIN => 'Cabins !!',
-            RsvpService::LOCATION_CAMP => 'Camp ground',
-            RsvpService::LOCATION_OTHER => 'Alright you do you',
+            RsvpService::LOCATION_HOTEL => 'Clarion Hotel',
+            RsvpService::LOCATION_CABIN_S => 'Small cabin',
+            RsvpService::LOCATION_CABIN_L => 'Large cabin',
+            RsvpService::LOCATION_CAMP => 'Campsite',
+            RsvpService::LOCATION_OTHER => 'OOther',
         };
     }
 }

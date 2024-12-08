@@ -114,7 +114,7 @@ class PagesController extends AbstractController
         }
 
         return $this->render('pages/rsvp_attend.html.twig', [
-            'title' => 'Merci  ' . $people->getFirstName() . ' !',
+            'title' => sprintf("Can't Wait To See You  %s!", $people->getFirstName()),
             'rsvp' => $rsvp,
             'form' => $form,
         ]);
@@ -147,7 +147,7 @@ class PagesController extends AbstractController
         }
 
         return $this->render('pages/rsvp_confirm.html.twig', [
-            'title' => 'A très vite !',
+            'title' => sprintf("Can't Wait To See You  %s!", $rsvp->getFirst()->getFirstName()),
             'rsvp' => $rsvp,
             'form' => $form,
             'first' => $rsvp->getFirst(),

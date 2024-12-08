@@ -1,18 +1,32 @@
 {% extends "base.html.twig" %}
 {% block body %}
-<section>
-	<div class="title-img">
+	<section>
+		<div class="title-img">
 			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
 		</div>
 
-<h1>{{ title|trans }}</h1>
-<div class="" style="display:flex; justify-content:center;">
+		<h1>{{ title|trans }}</h1>
+		<div class="content text-center">
+			<p>Please know that your presence at our wedding is present enough! Especially for those coming across the Atlantic, we are so incredibly thankful for the effort you’ll be making to join us for our special day, so please, no gifts!
+				<br>
+				For those who wish to celebrate with a gift, we’re so grateful. We’ve created an online registry here:
+			</p>
+			<div class="d-flex justify-content-center m-2">
 
 
-	<a href="https://www.milleetunelistes.fr/liste/annie-thomas" class="box-link" target="_blank">
-	Our registry
-	</a>
+				<a href="https://www.milleetunelistes.fr/liste/annie-thomas" class="box-link" target="_blank">
+					Our registry
+				</a>
 
-</div>
-</section>
+			</div>
+				<div class="text-center">
+					Annie Alquist and Thomas Aujean
+					<br>
+					101 Quai Louis Ferber<br>
+					94360 Bry Sur Marne
+					<br>
+					France
+				</div>
+		</div>
+	</section>
 {% endblock %}

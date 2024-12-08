@@ -41,17 +41,15 @@ class PeopleType extends AbstractType
                 'label' => $this->translator->trans('last_name')
             ])
             ->add('mealPreference', ChoiceType::class, [
-                'choices'  => [
-                    "Plutôt viande " => 'meat',
-                    'Plutôt poisson' => 'fish',
-                    'Plutôt crever' => 'vegan',
-                ],
+                'choices'  => $this->service->formMealPreferences(),
                 'label' => 'Dinner selection'
             ])
             ->add('activity', ChoiceType::class, [
                 'choices'  => [
                     'Zip lining' => 'zip',
-                    'River tubing' => 'float',
+                    'Whitewater tubing' => 'float',
+                    'Pool day' => 'pool',
+                    'None/Other' => 'other',
                 ],
                 'label' => 'Activity'
             ])
@@ -67,11 +65,12 @@ class PeopleType extends AbstractType
                     'Clarion Hotel' => 'hotel',
                     'Small cabin' => 'small_cabin',
                     'Large Cabin' => 'large_cabin',
+                    'Campsite' => 'campsite',
                     'Other' => 'other',
                 ],
                 'label' => 'Where will you be staying?'
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Enregistrer'])
+            ->add('submit', SubmitType::class, ['label' => 'Submit'])
         ;
     }
     

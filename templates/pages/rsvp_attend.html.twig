@@ -23,18 +23,5 @@
 		{{ form_end(form) }}
 
 		{{ include('pages/_activities_details.html.twig') }}
-
-
-		{# <div>
-						Les membres de ma famille
-		
-						{% for people in rsvp.getPeople %}
-							<li>
-								{{ people.firstName|e }}
-								- <a href="{{ path('people_edit', {'uuid': people.uuid}) }}">update</a>
-								- <a href="{{ path('people_delete', {'uuid': people.uuid}) }}">Delete</a>
-							</li>
-						{% endfor %}
-					</div> #}
 	</section>
 {% endblock %}
