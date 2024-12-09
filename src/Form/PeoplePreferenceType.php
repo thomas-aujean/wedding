@@ -3,15 +3,12 @@
 namespace App\Form;
 
 use App\Entity\People;
-use App\Entity\Rsvp;
 use App\Service\RsvpService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class PeoplePreferenceType extends AbstractType
@@ -33,12 +30,7 @@ class PeoplePreferenceType extends AbstractType
                 'label' => 'Dinner selection'
             ])
             ->add('activity', ChoiceType::class, [
-                'choices'  => [
-                    'Zip lining' => 'zip',
-                    'Whitewater tubing' => 'float',
-                    'Pool day' => 'pool',
-                    'None/Other' => 'other',
-                ],
+                'choices'  => $this->service->formActivities(),
                 'label' => 'Activity'
             ])
             ->add('yoga', ChoiceType::class, [
@@ -49,16 +41,10 @@ class PeoplePreferenceType extends AbstractType
                 'label' => 'Outdoor Yoga'
             ])
             ->add('location', ChoiceType::class, [
-                'choices'  => [
-                    'Clarion Hotel' => 'hotel',
-                    'Small cabin' => 'small_cabin',
-                    'Large Cabin' => 'large_cabin',
-                    'Campsite' => 'campsite',
-                    'Other' => 'other',
-                ],
+                'choices'  => $this->service->formLocations(),
                 'label' => 'Where will you be staying?'
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])
+            ->add('submit', SubmitType::class, ['label' => $this->translator->trans('submit')])
         ;
     }
 

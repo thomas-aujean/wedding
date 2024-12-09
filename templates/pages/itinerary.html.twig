@@ -10,11 +10,13 @@
 		<div class="content">
 
 
-			<div class="accordion" id="accordionExample">
+			<div
+				class="accordion" id="accordionExample">
+				{# FRIDAY START #}
 				<div class="accordion-item">
 					<h2 class="accordion-header">
 						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							<b>Friday July 11, 2025</b>
+							<b>{% trans %}friday{% endtrans %}</b>
 						</button>
 					</h2>
 					<div id="collapseOne" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
@@ -24,24 +26,14 @@
 							</p>
 							<p>{% trans %}itinerary_1{% endtrans %}:</p>
 							<ul>
-								<li>Check-into accommodations: HF Adventure center (cabins or campsite), Clarion Inn, or other bnb in Harpers Ferry or Charles Town</li>
-								<li>Explore downtown Harpers Ferry, hike Maryland Heights</li>
-								<li>Try a local restaurant</li>
-								<li>Live music at The Barn or beers at Harpers Ferry Brewery</li>
+								{% trans %}itinerary_2{% endtrans %}
 							</ul>
 
-							<p>
-								For immediate family and the wedding party: The ceremony rehearsal will be held at the wedding venue at 4 pm. Dinner at Dan and Diane's to follow.
-							</p>
+							<p>{% trans %}itinerary_3{% endtrans %}</p>
+							<p>{% trans %}itinerary_4{% endtrans %}</p>
+							<p>{% trans %}itinerary_5{% endtrans %}</p>
 
-							<p>For those who wish to visit Harpers Ferry National Historical Park (“downtown”): Parking is at
-								<b>171 Shoreline Drive, Harpers Ferry, WV 25425</b>
-								and from there you will take a shuttle bus downtown.
-							</p>
-
-							<p>To access Maryland Heights hiking trail: go to downtown HF > Cross the walking bridge over the rivers > turn left once you go down the stairs from the bridge > walk the C&O canal path approx. 1km* > turn right towards the mountain, you will see a sign with a map of Maryland Heights > follow the trail up to the overlook</p>
-
-							<i>Restaurant recommendations:</i>
+							<i>{% trans %}itinerary_6{% endtrans %}:</i>
 							<br>
 							<a href="https://kelleyfarmkitchen.com/" target="_blank">Vegan - Kelly Farm Kitchen</a>
 							<br>
@@ -52,7 +44,7 @@
 							Guide House Grill food truck (on-site at HF Brewery/Adventure Center)
 							<br>
 							<br>
-							<i>Relevant links:</i>
+							<i>{% trans %}itinerary_7{% endtrans %}:</i>
 							<br>
 							<a href="https://www.nps.gov/hafe/index.htm">Harpers Ferry National Historical Park</a>
 							<br>
@@ -63,121 +55,72 @@
 							<a href="https://harpersferrybrewing.com/">Harpers Ferry Brewing</a>
 							<br>
 							<br>
-							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">{% trans %}itinerary_8{% endtrans %}</a>
 						</div>
 					</div>
 				</div>
+				{# FRIDAY END #}
+
+				{# SATURDAY START #}
 				<div class="accordion-item">
 					<h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							<b>Saturday July 12, 2025</b>
+							<b>{% trans %}saturday{% endtrans %}</b>
 						</button>
 					</h2>
 					<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
 
 							<p>
-								<i>Transportation will be provided to and from the wedding for those staying off-site.</i>
+								<i>{% trans %}itinerary_9{% endtrans %}</i>
 							</p>
-
-							<p>
-								<b>8:30-11:30:</b>
-								Breakfast buffet on-site for guests camping at HF Adventure Center
-								<br>
-								<i>Location: Picnic tables at cabins 1-6</i>
-							</p>
-
-
-							<p>
-								<b>9:00-10:00:</b>
-								Outdoor yoga at HF Adventure Center (everyone welcome! RSVP required)
-								<br>
-								<i>Meet at Harpers Ferry Brewery Sunset Deck at 8:50am</i>
-							</p>
-
-
-							<p>
-								<b>12:00:</b>
-								Bridal and groom’s parties, getting ready
-								<br>
-								<i>Bridal party: please meet at location*</i>
-								<br>
-								<i>Groom party: please meet at location*</i>
-							</p>
-
-							<p>
-								<b>3:00-10:00:</b>
-								Wedding ceremony and reception at Harpers Ferry Brewing</p>
-
-							<p>
-								<b>10 pm onward:</b>
-								After party at cabins 1-6
-							</p>
+							<p>{% trans %}itinerary_10{% endtrans %}</p>
+							<p>{% trans %}itinerary_11{% endtrans %}</p>
+							<p>{% trans %}itinerary_12{% endtrans %}</p>
+							<p>{% trans %}itinerary_13{% endtrans %}</p>
+							<p>{% trans %}itinerary_14{% endtrans %}</p>
 
 							{# TODO : !! Shuttle schedule: #}
-							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
-
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">{% trans %}itinerary_8{% endtrans %}</a>
 						</div>
 					</div>
 				</div>
+				{# SATURDAY END #}
+
+				{# SUNDAY START #}
 				<div class="accordion-item">
 					<h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							<b>Sunday July 13, 2025</b>
+							<b>{% trans %}sunday{% endtrans %}</b>
 						</button>
 					</h2>
 					<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<p>
-								<i>If checking out on this day, check-out time is 11am for those camping or in cabins, and also for the Clarion Inn</i>
-							</p>
 
-							<p>
-								<b>8:30-10:30:</b>
-								Breakfast buffet on-site for those camping or in cabins
-							</p>
-							<p>
-								<b>10:30:</b>
-								Check-in for
-
-
-								<u>
-									<a data-bs-toggle="modal" data-bs-target="#tubingModal" style="cursor:pointer;">
-										whitewater tubing
-									</a>
-								</u>
-
-								or
-								<u>
-									<a data-bs-toggle="modal" data-bs-target="#zipModal" style="cursor:pointer;">
-										zip lining
-									</a>
-								</u>
-								next to main office at Harpers Ferry Adventure Center (Please select your choice of activity on RSVP)
-							</p>
-
-							See more details for each activity
-							<a href="https://harpersferryadventurecenter.com/adventures/" target="_blank">here</a>
+							<p>{% trans %}itinerary_15{% endtrans %}</p>
+							<p>{% trans %}itinerary_16{% endtrans %}</p>
+							<p>{% trans %}itinerary_17{% endtrans %}</p>
+								
+							{% trans %}itinerary_18{% endtrans %}
 							<br>
-							<a href="https://harpersferryadventurecenter.com/know-before-you-go/" taget="_blank">Activity FAQ</a>
+							<a href="https://harpersferryadventurecenter.com/know-before-you-go/" taget="_blank">{% trans %}itinerary_19{% endtrans %}</a>
 							<br>
 							<br>
 
 							<i class="text-right">
-								For those with kids younger than 7 years old who cannot go on the river or zipline, the parents of the bride invite you to their home to swim in the pool!
-								<br>
-								Parental supervision required.
+								{% trans %}itinerary_20{% endtrans %}
 							</i>
 							<br>
 							<br>
-							<p>After tubing/ziplining, there is a food truck (Guide House Grill) at the brewery/adventure center where you can stop for lunch.</p>
-							<p>For those staying until Monday: we will have a BBQ at 7:00 pm at the cabin area.</p>
+							<p>{% trans %}itinerary_21{% endtrans %}</p>
+							<p>{% trans %}itinerary_22{% endtrans %}</p>
 
-							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">Harpers Ferry Adventure Center map</a>
+							<a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">{% trans %}itinerary_8{% endtrans %}</a>
 
 						</div>
 					</div>
 				</div>
+				{# SUNDAY END #}
 			</div>
 		</div>
 	</section>

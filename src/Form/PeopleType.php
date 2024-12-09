@@ -45,12 +45,7 @@ class PeopleType extends AbstractType
                 'label' => 'Dinner selection'
             ])
             ->add('activity', ChoiceType::class, [
-                'choices'  => [
-                    'Zip lining' => 'zip',
-                    'Whitewater tubing' => 'float',
-                    'Pool day' => 'pool',
-                    'None/Other' => 'other',
-                ],
+                'choices'  => $this->service->formActivities(),
                 'label' => 'Activity'
             ])
             ->add('yoga', ChoiceType::class, [
@@ -61,16 +56,10 @@ class PeopleType extends AbstractType
                 'label' => 'Outdoor Yoga'
             ])
             ->add('location', ChoiceType::class, [
-                'choices'  => [
-                    'Clarion Hotel' => 'hotel',
-                    'Small cabin' => 'small_cabin',
-                    'Large Cabin' => 'large_cabin',
-                    'Campsite' => 'campsite',
-                    'Other' => 'other',
-                ],
+                'choices'  => $this->service->formLocations(),
                 'label' => 'Where will you be staying?'
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])
+            ->add('submit', SubmitType::class, ['label' => $this->translator->trans('submit')])
         ;
     }
     

@@ -9,13 +9,7 @@
 
 		<div class="content">
 
-			<p>Here is a recap of your selections.</p>
-			<p>
-				Feel free to email us if you want to make any changes.
-				<br>
-				aujean.alquist@gmail.com
-			</p>
-			<p>Please add other guests in your party.</p>
+			{% trans %}rsvp_1{% endtrans %}
 
 			<div class="wrapper three">
 				{% for person in rsvp.people %}
@@ -25,16 +19,20 @@
 							{{ person.lastName|upper }}
 						</div>
 						<br>
-						Meal :
+						{% trans %}dinner_selection{% endtrans %}
+						:
 						{{ person|meal() }}
 						<br>
-						Activity :
+						{% trans %}activity{% endtrans %}
+						:
 						{{ person|activity() }}
 						<br>
-						Yoga :
+						{% trans %}outdoor_yoga{% endtrans %}
+						:
 						{{ person|yoga() }}
 						<br>
-						Accomodation :
+						{% trans %}where_will_you_stay{% endtrans %}
+						:
 						{{ person|location() }}
 						<br>
 						{% if person.id is not same as(first.id)  %}
@@ -46,10 +44,7 @@
 				{% endfor %}
 			</div>
 
-			<p>
-				Dress code: We want you to be comfortable at our wedding. The dress code is
-			<a data-bs-toggle="modal" data-bs-target="#dressCode" style="cursor:pointer;">mountain chic</a>. It will be hot this time of year, and you’ll be walking on gravel and dancing on grass, so keep that in mind when choosing what to wear.
-			</p>
+			<p>{% trans %}rsvp_2{% endtrans %}</p>
 
 
 			<!-- Button trigger modal -->
@@ -66,7 +61,7 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<h1 class="modal-title fs-5" id="exampleModalLabel">
-								Ajout d'un membre de votre famille
+								{% trans %}add_plus{% endtrans %}
 							</h1>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
@@ -103,18 +98,18 @@
 	</section>
 
 	<div class="modal fade" id="dressCode" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-			
-			<img src="{{ asset('images/dress_code.png') }}" class="img-fluid" alt="">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+
+					<img src="{{ asset('images/dress_code.png') }}" class="img-fluid" alt="">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
 
 {% endblock %}

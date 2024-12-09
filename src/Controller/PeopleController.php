@@ -47,7 +47,7 @@ class PeopleController extends AbstractController
                 ],
                 'label' => 'Activity'
             ])
-            ->add('submit', SubmitType::class, ['label' => 'Submit'])
+            ->add('submit', SubmitType::class, ['label' => $this->translator->trans('submit')])
             ->getForm();
 
         $form->handleRequest($request);

@@ -2,7 +2,6 @@
 
 namespace App\Service;
 
-use App\Controller\PeopleController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Rsvp;
 use App\Entity\People;
@@ -56,9 +55,9 @@ class RsvpService
     public function mealPreferences(): array
     {
         return [
-            self::MEAL_VEGAN => 'Vegan',
-            self::MEAL_ALL => 'Meat',
-            self::MEAL_FISH => 'Fish',
+            self::MEAL_VEGAN => $this->translator->trans('Vegan'),
+            self::MEAL_ALL => $this->translator->trans('Meat'),
+            self::MEAL_FISH => $this->translator->trans('Fish'),
         ];
     }
 
@@ -68,11 +67,44 @@ class RsvpService
     public function formMealPreferences(): array
     {
         return [
-            'Vegan' => self::MEAL_VEGAN,
-            'Meat' => self::MEAL_ALL,
-            'Fish' => self::MEAL_FISH,
+            $this->translator->trans('Vegan') => self::MEAL_VEGAN,
+            $this->translator->trans('Meat') => self::MEAL_ALL,
+            $this->translator->trans('Fish') => self::MEAL_FISH,
         ];
     }
+
+    public function activities(): array
+    {
+        return [
+            self::ACTIVITY_ZIP => $this->translator->trans('Zip'),
+            self::ACTIVITY_TUBING => $this->translator->trans('Tubing'),
+            self::ACTIVITY_POOL => $this->translator->trans('Pool'),
+            self::ACTIVITY_OTHER => $this->translator->trans('Other'),
+        ];
+    }
+
+    public function formActivities(): array
+    {
+        return [
+            $this->translator->trans('Zip') => self::ACTIVITY_ZIP,
+            $this->translator->trans('Tubing') => self::ACTIVITY_TUBING,
+            $this->translator->trans('Pool') => self::ACTIVITY_POOL,
+            $this->translator->trans('Other') => self::ACTIVITY_OTHER,
+        ];
+    }
+
+    public function formLocations(): array
+    {
+        return [
+            'Clarion Hotel' => self::LOCATION_HOTEL,
+            $this->translator->trans('cabin_s') => self::LOCATION_CABIN_S,
+            $this->translator->trans('cabin_l') => self::LOCATION_CABIN_L,
+            $this->translator->trans('Campsite') => self::LOCATION_CAMP,
+            $this->translator->trans('Other') => self::LOCATION_OTHER,
+        ];
+    }
+
+
     /**
      * 
      */

@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block body %}
 	<section class="main-section">
-	<div class="title-img">
+		<div class="title-img">
 			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
 		</div>
 
@@ -10,46 +10,20 @@
 
 			<div class="line">
 				<div class="icon"><img src="{{ asset('images/icons/plane.png') }}" alt=""></div>
-				<div>
-					<b>Closest international airport :</b>
-					Washington Dulles (IAD) 40 minute drive to Harpers Ferry
-					<br>
-					<a href="https://www.flydulles.com/parking-transportation/rental-cars" target="_blank">Dulles airport rental cars</a>
-				</div>
+				<div>{% trans %}transportation_1{% endtrans %}</div>
 			</div>
 			<div class="line cb">
-
 				<div class="icon"><img src="{{ asset('images/icons/train.png') }}" alt=""></div>
-				<div>
-					<b>Amtrak train station :</b>
-					Harpers Ferry (HFY)
-					<br>
-					<a href="https://www.amtrak.com/tickets-reservations" target="_blank">Tickets</a>
-				</div>
+				<div>{% trans %}transportation_2{% endtrans %}</div>
 			</div>
 			<div class="line">
 				<div class="icon"><img src="{{ asset('images/icons/car.png') }}" alt=""></div>
-				<div>
-
-					<b>Rental cars :
-					</b><br>
-					<a href="https://www.enterprise.com/en/car-rental-locations/us/wv/charles-town-162n.html?mcid=yext:245709" target="_blank">Enterprise Rent-A-Car</a>
-					(10 minute drive from Harpers Ferry)
-					<br>
-					765 E Washington St
-					<br>
-					Charles Town, West Virginia
-					<br>
-					25414 United States
-				</div>
-
+				<div>{% trans %}transportation_3{% endtrans %}</div>
 			</div>
 			<div class="line bv">
 				<div class="icon"><img src="{{ asset('images/icons/pin.png') }}" alt=""></div>
 				<div>
-					<b>Important Addresses :</b>
-						<br>
-					Wedding Ceremony + Reception / Camping + Cabins / Yoga / Whitewater Tubing + Ziplining:
+					{% trans %}transportation_4{% endtrans %}
 					<br>
 					<a href="https://harpersferryadventurecenter.com/?utm_source=googlelocallistings&utm_medium=organic">Harpers Ferry Brewing + Adventure Center</a>
 					<br>
@@ -60,15 +34,15 @@
 					20132 United States
 					<br>
 					<br>
-					<a href="https://www.choicehotels.com/west-virginia/harpers-ferry/clarion-hotels/wv078?mc=llgoxxpx">Clarion Inn</a>
+					<a href="https://www.choicehotels.com/west-virginia/harpers-ferry/clarion-hotels/wv078?mc=llgoxxpx">{% trans %}transportation_5{% endtrans %}</a>
 					<br>
 					4328 William L Wilson Fwy
 					<br>
 					Harpers Ferry, West Virginia
 					<br>
 					25425 United States
-					<br>																										
-					<br>																										
+					<br>
+					<br>
 					Dan & Diane Alquist’s home
 					<br>
 					361 Pointfield Drive
@@ -78,20 +52,14 @@
 					25425 United States
 				</div>
 			</div>
-			<br>	
+			<br>
 			<div class="line os">
 				<div class="icon"><img src="{{ asset('images/icons/shuttle.png') }}" alt=""></div>
-				<div>
-					A transportation shuttle will be provided to and from the wedding on July 12th 2025.
-
-				</div>
+				<div>{% trans %}transportation_6{% endtrans %}</div>
 			</div>
 			<div class="line">
 				<div class="icon"><img src="{{ asset('images/icons/warning.png') }}" alt=""></div>
-				<div>
-					Attention: The closest “larger town” near Harpers Ferry is Charles
-					<b>Town</b>, West Virginia… not to be confused with Charles<b>ton</b>, West Virginia (our capital city in southern WV).
-				</div>
+				<div>{% trans %}transportation_7{% endtrans %}</div>
 			</div>
 		</div>
 	</section>

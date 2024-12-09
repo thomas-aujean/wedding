@@ -6,10 +6,13 @@ use App\Entity\People;
 use App\Service\RsvpService;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class RsvpExtension extends AbstractExtension
 {
-    public function __construct(protected RsvpService $rsvpService)
+    public function __construct(
+        protected TranslatorInterface $translator,
+        protected RsvpService $rsvpService)
     {
 
     }
@@ -41,10 +44,10 @@ class RsvpExtension extends AbstractExtension
     public function activity(People $people): string
     {
         return match ($people->getActivity()) {
-            RsvpService::ACTIVITY_ZIP => 'Zipline',
-            RsvpService::ACTIVITY_TUBING => 'Whitewater tubing',
-            RsvpService::ACTIVITY_POOL => 'Pool day',
-            RsvpService::ACTIVITY_OTHER => 'Other',
+            RsvpService::ACTIVITY_ZIP => $this->translator->trans('Zip'),
+            RsvpService::ACTIVITY_TUBING => $this->translator->trans('Tubing'),
+            RsvpService::ACTIVITY_POOL => $this->translator->trans('Pool'),
+            RsvpService::ACTIVITY_OTHER => $this->translator->trans('Other'),
         };
     }
 
@@ -52,10 +55,10 @@ class RsvpExtension extends AbstractExtension
     {
         return match ($people->getLocation()) {
             RsvpService::LOCATION_HOTEL => 'Clarion Hotel',
-            RsvpService::LOCATION_CABIN_S => 'Small cabin',
-            RsvpService::LOCATION_CABIN_L => 'Large cabin',
-            RsvpService::LOCATION_CAMP => 'Campsite',
-            RsvpService::LOCATION_OTHER => 'OOther',
+            RsvpService::LOCATION_CABIN_S => $this->translator->trans('cabin_s'),
+            RsvpService::LOCATION_CABIN_L => $this->translator->trans('cabin_l'),
+            RsvpService::LOCATION_CAMP => $this->translator->trans('Campsite'),
+            RsvpService::LOCATION_OTHER => $this->translator->trans('Other'),
         };
     }
 }
