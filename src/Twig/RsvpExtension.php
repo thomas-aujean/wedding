@@ -48,6 +48,7 @@ class RsvpExtension extends AbstractExtension
             RsvpService::ACTIVITY_TUBING => $this->translator->trans('Tubing'),
             RsvpService::ACTIVITY_POOL => $this->translator->trans('Pool'),
             RsvpService::ACTIVITY_OTHER => $this->translator->trans('Other'),
+            default => 'Unknown'
         };
     }
 
@@ -59,6 +60,7 @@ class RsvpExtension extends AbstractExtension
             RsvpService::LOCATION_CABIN_L => $this->translator->trans('cabin_l'),
             RsvpService::LOCATION_CAMP => $this->translator->trans('Campsite'),
             RsvpService::LOCATION_OTHER => $this->translator->trans('Other'),
+            default => 'Unknown'
         };
     }
 }

@@ -1,15 +1,18 @@
 Symfony is great: J'aime Symfony
-choose: Choisissez votre adventure
+choose: Choisissez votre adventure !
 submit: Valider
-rsvp_yes: Vous pouvez compter sur nous
-rsvp_no: Malheureusement non..
-see_ya: See you there? 
+rsvp_yes: Avec plaisir !
+rsvp_no: Malheureusement non
+select: Merci de choisir
+see_ya: Serez-vous présent ?
 first_name: Prénom
 last_name: Nom de famille
 friday: Vendredi 11 juillet 2025
 saturday: Samedi 12 juillet 2025
 sunday: Dimanche 13 juillet 2025
+activities: Activités
 
+dinner: Dîner
 dinner_selection: Sélection pour le dîner
 Vegan: Vegan
 Meat: Viande
@@ -28,6 +31,8 @@ cabin_s: Petite cabane
 
 outdoor_yoga: Yoga en plein air
 
+thx: "On a hâte de te voir {name}!"
+
 add_plus: Ajout d'un membre de votre famille
 
 accomodations: Hébergements
@@ -39,9 +44,9 @@ accomodations_5: "Si vous envisagez de louer un camping-car, vous pouvez le gare
 accomodations_6: "Pour les invités plus locaux qui peuvent apporter leurs propres tentes et matériel de camping, nous avons réservé le <a data-bs-toggle=\"modal\" data-bs-target=\"#mapModal\" style=\"cursor:pointer;\">camping n°6</a> pour que vous puissiez y camper gratuitement. Ce camping se trouve à quelques minutes de marche de la cérémonie et de la réception, ainsi que des cabanes 1-6 (où se dérouleront l'afterparty et le buffet du petit-déjeuner)."
 accomodations_7: Instructions pour réserver une cabane au Harpers Ferry Adventure Center
 accomodations_8: Vous ne trouverez pas de cabanes disponibles sur leur site Internet pour ces dates car elles ont déjà été mises à côte pour nos invitées uniquement. Vous devez envoyer un courriel à Kim pour réserver votre cabane, à l'adresse info@hfadventurecenter.com
-accomodations_8b: "N'oubliez pas de mentionner dans votre courriel que vous réservez pour le mariage d'Aujean Alquist, et de préciser la taille de la cabane que vous souhaitez (petite : 4 personnes, 139 $/nuit -ou- grande : 5 personnes, 149 $/nuit). Les cabanes sont réservées pour nos invités du mariage <u>jusqu'au 30 mars 2025</u>. Après cette date, elles seront accessibles au public. Veillez donc à réserver avant le 30 mars ! La facture et le lien pour payer en ligne vous seront envoyés par courriel."
+accomodations_8b: "N'oubliez pas de mentionner dans votre courriel que vous réservez pour le mariage d'Aujean Alquist, et de préciser la taille de la cabane que vous souhaitez (petite: 4 personnes, 139 $/nuit -ou- grande: 5 personnes, 149 $/nuit). Les cabanes sont réservées pour nos invités du mariage <u>jusqu'au 30 mars 2025</u>. Après cette date, elles seront accessibles au public. Veillez donc à réserver avant le 30 mars ! La facture et le lien pour payer en ligne vous seront envoyés par courriel."
 accomodations_9: Nous vous recommandons de réserver votre cabane du vendredi 11 juillet au lundi 14 juillet, car nous serons sur la rivière ou en tyrolienne dans les montagnes le dimanche matin ! De cette façon, vous n'aurez pas à vous dépêcher de partir au moment où nous nous préparons pour l'aventure ! L'heure de départ pour les cabanes et les tentes est fixée à 11 heures ; whitewater tubing et tyrolienne sont prévus à 10 h 30 le dimanche 13 juillet.
-accomodations_10: "Pour ceux qui préfèrent un luxe plus moderne, nous avons également réservé un bloc de chambres d'hôtel au Clarion Inn à Harpers Ferry, à environ 5 minutes en voiture du lieu du mariage. De là, le transport sera assuré pour aller et revenir du mariage le 12 juillet.<br>Veuillez utiliser <a href=\"https://www.choicehotels.com/reservations/groups/LJ64S3\" target=\"_blank\">ce lien</a> pour réserver votre chambre. Les chambres coûtent 144 $/nuit et peuvent accueillir jusqu'à quatre personnes (deux grands lits).<br>Si vous avez des questions, vous pouvez envoyer un courriel à Lisa à l'adresse : sales@clarionhotelharpersferry.com. Mentionnez simplement qu'il s'agit du bloc de mariage « Aujean Alquist »."
+accomodations_10: "Pour ceux qui préfèrent un luxe plus moderne, nous avons également réservé un bloc de chambres d'hôtel au Clarion Inn à Harpers Ferry, à environ 5 minutes en voiture du lieu du mariage. De là, le transport sera assuré pour aller et revenir du mariage le 12 juillet.<br>Veuillez utiliser <a href=\"https://www.choicehotels.com/reservations/groups/TA99Y1\" target=\"_blank\">ce lien</a> pour réserver votre chambre. Les chambres coûtent 130 $/nuit et peuvent accueillir jusqu'à quatre personnes (deux grands lits).<br>Si vous avez des questions, vous pouvez envoyer un courriel à Lisa à l'adresse: sales@clarionhotelharpersferry.com. Mentionnez simplement qu'il s'agit du bloc de mariage « Aujean Alquist »."
 accomodations_11: Nous avons également compilé une liste de chambres d'hôtes locales dans le centre-ville de Harpers Ferry et dans la ville voisine de Charles Town, pour ceux qui apprécient un peu de charme historique.
 accomodations_12: À Harpers Ferry
 accomodations_13: À Charles Town (à 15 minutes de route du mariage)
@@ -49,10 +54,10 @@ accomodations_13: À Charles Town (à 15 minutes de route du mariage)
 itinerary: Itinéraire
 # FRIDAY
 itinerary_1: Nous recommandons
-itinerary_2: "<li>S'enregistrer dans vos hébergements : HF Adventure center (cabanes ou camping), Clarion Inn, ou autre bnb à Harpers Ferry ou Charles Town.</li><li>Explorer le centre-ville de Harpers Ferry, faire une randonnée à Maryland Heights</li><li>Essayer un restaurant local</li><li>Musique live à The Barn ou des bières à Harpers Ferry Brewery</li>"
-itinerary_3: "Pour la famille proche et les personnes impliquées dans la cérémonie : La répétition de la cérémonie aura lieu à la pergola de la brasserie à 16 heures. Le dîner chez Dan et Diane suivra."
-itinerary_4: "Pour ceux qui souhaitent visiter le parc historique national de Harpers Ferry (« downtown ») : Le parking se trouve au <b>171 Shoreline Drive, Harpers Ferry, WV 25425</b>. De là, vous prendrez une navette pour le centre-ville."
-itinerary_5: "Pour accéder au sentier de randonnée de Maryland Heights : allez au centre-ville de HF > traversez le pont piétonnier qui enjambe les rivières > tournez à gauche une fois que vous avez descendu les escaliers du pont > suivez le sentier du canal C&O sur environ 1 km* > tournez à droite en direction de la montagne, vous verrez un panneau avec une carte de Maryland Heights > suivez le sentier jusqu'au point de vue."
+itinerary_2: "<li>S'enregistrer dans vos hébergements: HF Adventure center (cabanes ou camping), Clarion Inn, ou autre bnb à Harpers Ferry ou Charles Town.</li><li>Explorer le centre-ville de Harpers Ferry, faire une randonnée à Maryland Heights</li><li>Essayer un restaurant local</li><li>Musique live à The Barn ou des bières à Harpers Ferry Brewery</li>"
+itinerary_3: "Pour la famille proche et les personnes impliquées dans la cérémonie: La répétition de la cérémonie aura lieu à la pergola de la brasserie à 16 heures. Le dîner chez Dan et Diane suivra."
+itinerary_4: "Pour ceux qui souhaitent visiter le parc historique national de Harpers Ferry (« downtown »): Le parking se trouve au <b>171 Shoreline Drive, Harpers Ferry, WV 25425</b>. De là, vous prendrez une navette pour le centre-ville."
+itinerary_5: "Pour accéder au sentier de randonnée de Maryland Heights: allez au centre-ville de HF > traversez le pont piétonnier qui enjambe les rivières > tournez à gauche une fois que vous avez descendu les escaliers du pont > suivez le sentier du canal C&O sur environ 1 km* > tournez à droite en direction de la montagne, vous verrez un panneau avec une carte de Maryland Heights > suivez le sentier jusqu'au point de vue."
 itinerary_6: "Recommandations de restaurants"
 itinerary_7: "Liens pertinents"
 itinerary_8: "Carte du Harpers Ferry Adventure Center"
@@ -61,17 +66,17 @@ itinerary_8: "Carte du Harpers Ferry Adventure Center"
 itinerary_9: Une navette sera mise en place pour les personnes séjournant à l'hôtel Clarion Inn.
 itinerary_10: "<b>8:30 - 11:30:</b> Buffet petit-déjeuner sur place aux cabanes 1-6 pour ceux qui campent au HF Adventure Center."
 itinerary_11: "<b>9h00 - 10h00:</b> Yoga en plein air au HF Adventure Center (tout le monde est le bienvenu ! RSVP requis)<br><i>Rendez-vous au Sunset Deck de la Harpers Ferry Brewery à 8h50.</i>"
-itinerary_12: "<b>12h00:</b> Ça se prépare !<br><i>Cortège de la mariée, coiffure et maquillage : rendez-vous sur place* (à déterminer)</i><br><i>Cortège du marié, préparatifs : rendez-vous sur place* (à déterminer)</i>"
+itinerary_12: "<b>12h00:</b> Ça se prépare !<br><i>Cortège de la mariée, coiffure et maquillage: rendez-vous sur place* (à déterminer)</i><br><i>Cortège du marié, préparatifs: rendez-vous sur place* (à déterminer)</i>"
 itinerary_13: "<b>15h00 - 22h00:</b> Cérémonie de mariage et réception à la brasserie Harpers Ferry</p>"
 itinerary_14: "<b>22 heures et plus:</b> Afterparty aux cabanes 1-6"
 
 # SUNDAY
 itinerary_15: "<i>Si vous partez ce jour-là, l'heure de départ est fixée à 11 heures pour les personnes qui campent ou qui sont dans des cabanes, ainsi que pour l'hôtel Clarion Inn.</i>"
 itinerary_16: <b>8h30 - 10h30:</b>  Buffet petit-déjeuner sur place aux cabanes 1-6 pour ceux qui campent au HF Adventure Center.
-itinerary_17: "<b>10h30:</b> Enregistrement pour <u><a data-bs-toggle=\"modal\" data-bs-target=\"#tubingModal\" style=\"cursor:pointer;\">whitewater tubing</a></u> ou <u><a data-bs-toggle=\"modal\" data-bs-target=\"#zipModal\" style=\"cursor:pointer;\">tyrolienne</a></u> à côté de l’accueil du Harpers Ferry Adventure Center (veuillez sélectionner l'activité de votre choix sur le RSVP)"
+itinerary_17: "<b>10h30:</b> Enregistrement pour <a data-bs-toggle=\"modal\" data-bs-target=\"#tubingModal\" style=\"cursor:pointer;\">whitewater tubing</a> ou <a data-bs-toggle=\"modal\" data-bs-target=\"#zipModal\" style=\"cursor:pointer;\">tyrolienne</a> à côté de l’accueil du Harpers Ferry Adventure Center (veuillez sélectionner l'activité de votre choix sur le RSVP)"
 itinerary_18: "Pour plus de détails sur chaque activité, <a href=\"https://harpersferryadventurecenter.com/adventures/\" target=\"_blank\">cliquez ici</a>"
 itinerary_19: FAQ sur les activités
-itinerary_20: "Pour ceux qui ont des enfants de moins de 7 ans et qui ne peuvent pas aller sur la rivière ou la tyrolienne, les parents de la mariée vous invitent chez eux pour nager dans la piscine!<br>Supervision parentale requise."
+itinerary_20: "Pour ceux qui ont des enfants de moins de 7 ans et qui ne peuvent pas aller sur la rivière ou la tyrolienne, les parents de la mariée vous invitent chez eux pour nager dans la piscine !<br>Supervision parentale requise."
 itinerary_21: "Après le tubing/ziplining, il y a un food truck (Guide House Grill) à la brasserie/centre d'aventure où vous pouvez vous arrêter pour déjeuner."
 itinerary_22: "Pour ceux qui restent jusqu'à lundi, nous organiserons un barbecue à 19h00 dans la zone des cabanes."
 
@@ -79,20 +84,31 @@ itinerary_22: "Pour ceux qui restent jusqu'à lundi, nous organiserons un barbec
 
 home: Accueil 
 transportation: Transport
-transportation_1: "<b>Aéroport international le plus proche :</b>Washington Dulles (IAD)<br>40 minutes en voiture de Harpers Ferry<br><a href=\"https://www.flydulles.com/parking-transportation/rental-cars\" target=\"_blank\">Location de voitures à l'aéroport de Dulles</a>"
-transportation_2: "<b>Gare de train Amtrak:</b> Harpers Ferry (HFY)<br><a href=\"https://www.amtrak.com/tickets-reservations\" target=\"_blank\">Billets</a>"
+transportation_1: "<b>Aéroport international le plus proche:</b><br>Washington Dulles (IAD)<br>40 minutes en voiture de Harpers Ferry<br><a href=\"https://www.flydulles.com/parking-transportation/rental-cars\" target=\"_blank\">Location de voitures à l'aéroport de Dulles</a>"
+transportation_2: "<b>Gare de train Amtrak:</b><br>Harpers Ferry (HFY)<br><a href=\"https://www.amtrak.com/tickets-reservations\" target=\"_blank\">Billets</a>"
 transportation_3: "<b>Location de voitures: </b><br><a href=\"https://www.enterprise.com/en/car-rental-locations/us/wv/charles-town-162n.html?mcid=yext:245709\" target=\"_blank\">Enterprise Rent-A-Car</a><br>A 10 minutes de route de Harpers Ferry<br>765 E Washington St<br>Charles Town, West Virginia<br>25414 United States"
-transportation_4: "<b>Adresses importantes :</b><br>Cérémonie de mariage + réception / Camping + cabanes / Yoga / Whitewater tubing + Tyrolienne."
-transportation_5: "Auberge Clarion"
+transportation_4: "<b>Adresses importantes: </b><br>Cérémonie de mariage + réception / Camping + cabanes / Yoga / Whitewater tubing + Tyrolienne."
+transportation_5: "Auberge Clarion Inn"
 transportation_6: "Une navette sera mise à disposition pour le transport aller-retour du mariage le 12 juillet 2025."
-transportation_7: "Attention : La « grande ville » la plus proche de Harpers Ferry est Charles Town, en Virginie-Occidentale... à ne pas confondre avec Charleston, en Virginie-Occidentale (notre capitale dans le sud du WV)."
+transportation_7: "Attention: La « grande ville » la plus proche de Harpers Ferry est Charles <b>Town<b/>, en Virginie-Occidentale... à ne pas confondre avec Charles<b>ton</b>, en Virginie-Occidentale (notre capitale dans le sud du WV)."
 
 registry: Liste de mariage
-registry_content: "Sachez que votre présence à notre mariage est déjà tout ce qu’on peut en souhaiter ! En particulier pour ceux qui viennent de l'autre côté de l'Atlantique, nous sommes incroyablement reconnaissants de l'effort que vous ferez pour vous joindre à nous pour ce jour spécial, alors s'il vous plaît, pas de cadeaux !<br>Pour ceux qui souhaitent célébrer ce jour avec un cadeau, nous en sommes très reconnaissants. Nous avons créé une liste de mariage en ligne ici:"
+registry_content: "Sachez que votre présence à notre mariage est déjà le plus beau des cadeaux! En particulier pour ceux qui traversent l'Atlantique, nous sommes incroyablement reconnaissants de l'effort que vous faites pour vous joindre à nous, alors s'il vous plaît, pas de cadeaux !<br>Pour ceux qui souhaitent célébrer ce jour avec un cadeau, nous en sommes très reconnaissants.<br>Nous avons créé une liste de mariage en ligne ici:"
 
 
-rsvp_1 : "<p>Voici un récapitulatif de votre sélection.</p><p>N'hésitez pas à nous envoyer un e-mail si vous souhaitez apporter des modifications.<br>aujean.alquist@gmail.com</p><p>Veuillez ajouter d'autres invités dans votre groupe.</p>"
-rsvp_2: "Code vestimentaire : Nous souhaitons que vous vous sentiez à l'aise lors de notre mariage. Le dress code est <a data-bs-toggle=\"modal\" data-bs-target=\"#dressCode\" style=\"cursor:pointer;\">mountain chic</a>. Il fera chaud à cette époque de l'année, et vous marcherez sur du gravier et danserez sur de l'herbe, alors gardez cela à l'esprit lorsque vous choisirez vos vêtements."
+rsvp_1: "<p>Voici un récapitulatif de votre sélection.</p><p>N'hésitez pas à nous envoyer un e-mail si vous souhaitez apporter des modifications.<br>aujean.alquist@gmail.com</p><p>Veuillez ajouter d'autres invités dans votre groupe.</p>"
+rsvp_2: "Code vestimentaire: Nous souhaitons que vous vous sentiez à l'aise lors de notre mariage. Le dress code est <a data-bs-toggle=\"modal\" data-bs-target=\"#dressCode\" style=\"cursor:pointer;\">mountain chic</a>. Il fera chaud à cette époque de l'année, et vous marcherez sur du gravier et danserez sur de l'herbe, alors gardez cela à l'esprit lorsque vous choisirez vos vêtements."
 
 
 details_1: "<b>Merci d'indiquer votre choix de dîner, votre participation au yoga et si vous souhaitez faire du tubing ou de la tyrolienne avant <u>le 12 mars 2025</u>.<br>Les cabanes du HF Adventure Center sont bloquées jusqu'au <u>30 mars 2025</u>.<br><br>Merci !</b>"
+details_2: "Choix du plat principal : végan, poisson ou viande<br>Veuillez nous informer de toute allergie, préférence alimentaire ou restriction.<br>aujean.alquist@gmail.com<br><br><i>Samedi 12 juillet, 2025</i><br>Cérémonie à 15h00 à Harpers Ferry Brewing<br>Apéro, dîner et danse à suivre"
+details_3: "<i>Samedi 12 juillet 2025</i><br>9h00-10h00 à la brasserie Harpers Ferry<br>Rendez-vous à 8h50 sur le <a data-bs-toggle=\"modal\" data-bs-target=\"#mapModal\" style=\"cursor:pointer;\">Sunset Deck</a> à la brasserie.<br>Si vous en avez un, merci d'apportez votre tapis de yoga."
+details_4: "Veuillez choisir : <a data-bs-toggle=\"modal\" data-bs-target=\"#tubingModal\" style=\"cursor:pointer;\">Whitewater tubing</a>, <a data-bs-toggle=\"modal\" data-bs-target=\"#zipModal\" style=\"cursor:pointer;\">tyrolienne</a> ou journée piscine chez Dan & Diane<br><i>Dimanche 13 juillet 2025</i><br>Rendez-vous à 10h30 au HF Adventure Center, à côté de <a data-bs-toggle=\"modal\" data-bs-target=\"#mapModal\" style=\"cursor:pointer;\">l'accueil</a> (réservation à 11h)"
+details_5: "N'hésitez pas à nous faire savoir où vous logez !<br><br>Harpers Ferry Adventure Center:<br><ul><li>Petite cabane (139 $/nuit)</li><li>Grande cabane (149 $/nuit)</li><li>Camping (gratuit &#9786;)</li></ul><br>Clarion Inn ($130/night)<br><br><br>Autre"
+
+
+
+
+
+
+

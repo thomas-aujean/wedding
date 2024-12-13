@@ -27,22 +27,22 @@ class PeoplePreferenceType extends AbstractType
         $builder
             ->add('mealPreference', ChoiceType::class, [
                 'choices'  => $this->service->formMealPreferences(),
-                'label' => 'Dinner selection'
+                'label' => $this->translator->trans('dinner_selection')
             ])
             ->add('activity', ChoiceType::class, [
                 'choices'  => $this->service->formActivities(),
-                'label' => 'Activity'
+                'label' => $this->translator->trans('activity')
             ])
             ->add('yoga', ChoiceType::class, [
                 'choices'  => [
                     'Namasté' => true,
                     'Nah, I’mma stay in bed' => false,
                 ],
-                'label' => 'Outdoor Yoga'
+                'label' => $this->translator->trans('outdoor_yoga')
             ])
             ->add('location', ChoiceType::class, [
                 'choices'  => $this->service->formLocations(),
-                'label' => 'Where will you be staying?'
+                'label' => $this->translator->trans('where_will_you_stay')
             ])
             ->add('submit', SubmitType::class, ['label' => $this->translator->trans('submit')])
         ;

@@ -1,0 +1,93 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<section>
+		<div class="title-img">
+			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
+		</div>
+
+		<h1>{{ title|trans|upper }}</h1>
+
+		<div class="content">
+
+			<div class="table-responsive-sm">
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">Is Attending</th>
+							<th scope="col">Name</th>
+							<th scope="col">Dinner</th>
+							<th scope="col">Activity</th>
+							<th scope="col">Yoga</th>
+							<th scope="col">Hotel</th>
+							{# <th scope="col">URL update</th> #}
+							<th scope="col">Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for rsvp in rsvps %}
+							{% for people in rsvp.people %}
+								<tr>
+									<th scope="row">{{ rsvp.isAttending ? 'Yes':'No' }}</th>
+									<td>{{ people.firstName|capitalize }}
+										{{ people.lastName|upper }}</td>
+									<td>{{ people|meal() }}</td>
+									<td>{{ people|activity() }}</td>
+									<td>{{ people|yoga() }}</td>
+									<td>{{ people|location() }}</td>
+									{# <td>{{ url('rsvp_attend', {'uuid': rsvp.uuid}) }}</td> #}
+									<td>{{ rsvp.createdAt|date("m/d/Y") }}</td>
+								</tr>
+							{% endfor %}
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+
+
+			<div>
+				<br>
+				<p>So far, we have {{ attendency}} people coming to our wedding</p>
+
+				<div class="wrapper">
+
+					<div class="box">
+						<div class="title">{% trans %}dinner{% endtrans %}</div>
+						<ul>
+							<li>Meat: {{ countMeat }} </li>
+							<li>Fish: {{ countFish }}</li>
+							<li>Vegan: {{ countVegan }}</li>
+						</ul>
+					</div>
+
+					<div class="box">
+						<div class="title">{% trans %}outdoor_yoga{% endtrans %}</div>
+						<ul>
+						<li>How many participate:  {{ countYoga }}</li>
+					</ul>
+					</div>
+
+					<div class="box">
+						<div class="title">{% trans %}activities{% endtrans %}</div>
+						<ul>
+						<li>Tubing: {{ countTubing }}</li>
+						<li>Zipline: {{ countZip }}</li>
+						<li>Pool: {{ countPool }}</li>
+					</ul>
+					</div>
+
+					<div class="box">
+						<div class="title">{% trans %}accomodations{% endtrans %}</div>
+						<ul>
+						<li>Clarion: {{ countInn }}</li>
+						<li>Campsite: {{ countCamp }}</li>
+						<li>Large cabin: {{ countLC }}</li>
+						<li>Small cabin: {{ countSC }}</li>
+					</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

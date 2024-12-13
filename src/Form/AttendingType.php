@@ -29,7 +29,7 @@ class AttendingType extends AbstractType
                 'choices'  => $this->service->attendingOptions(),
                 'label' => $this->translator->trans('see_ya'),
                 'constraints' => [new NotNull()],
-                'placeholder' => 'Please select',
+                'placeholder' => $this->translator->trans('select'),
             ]);
     }
 

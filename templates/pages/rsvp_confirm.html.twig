@@ -5,7 +5,7 @@
 			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
 		</div>
 
-		<h1>{{ title }}</h1>
+	<h1>{{ title|trans|upper }}</h1>
 
 		<div class="content">
 
@@ -44,8 +44,6 @@
 				{% endfor %}
 			</div>
 
-			<p>{% trans %}rsvp_2{% endtrans %}</p>
-
 
 			<!-- Button trigger modal -->
 			<div class="d-flex  justify-content-center">
@@ -54,6 +52,11 @@
 				</button>
 			</div>
 
+
+			<p>{% trans %}rsvp_2{% endtrans %}</p>
+
+
+			
 			{{ include('pages/_activities_details.html.twig') }}
 			<!-- Modal -->
 			<div class="modal fade" id="addPLusOne" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

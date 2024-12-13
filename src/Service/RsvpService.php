@@ -96,7 +96,7 @@ class RsvpService
     public function formLocations(): array
     {
         return [
-            'Clarion Hotel' => self::LOCATION_HOTEL,
+            'Clarion Inn' => self::LOCATION_HOTEL,
             $this->translator->trans('cabin_s') => self::LOCATION_CABIN_S,
             $this->translator->trans('cabin_l') => self::LOCATION_CABIN_L,
             $this->translator->trans('Campsite') => self::LOCATION_CAMP,
@@ -108,8 +108,11 @@ class RsvpService
     /**
      * 
      */
-    public function displayMealPreference(string $preference): string
+    public function displayMealPreference(?string $preference): string
     {
+        if (is_null($preference)) {
+            return 'Unknown';
+        }
         return $this->mealPreferences()[$preference];
     }
 

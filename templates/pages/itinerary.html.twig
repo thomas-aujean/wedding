@@ -5,7 +5,7 @@
 			<img src="{{ asset('images/flowers/black_eyed_susan_bouquet.png') }}" alt="">
 		</div>
 
-		<h1>{{ title|trans }}</h1>
+	<h1>{{ title|trans|upper }}</h1>
 
 		<div class="content">
 
@@ -124,103 +124,4 @@
 			</div>
 		</div>
 	</section>
-
-
-	<!-- Modals -->
-	<div class="modal fade" id="tubingModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">
-						<b>Whitewater tubing:</b>
-					</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<p>
-						<i>Depending on river conditions, your float will take approximately 1.5 to 2 hours.</i>
-					</p>
-
-					<p>Guests must check-in no later than 30 minutes prior to their scheduled time. (Reservation 11am /
-						<u>check-in next to main office at 10:30 am</u>)</p>
-
-					<b>Requirements:</b>
-					<ul>
-						<li>Whitewater tubing guests must be excellent swimmers and fairly physically fit.</li>
-						<li>Kids must be at least 12 years old.
-						</li>
-						<li>Anyone under 18 must be accompanied by an adult.</li>
-						<li>All guests must complete the liability waiver.</li>
-					</ul>
-
-					<b>What to wear:</b>
-					<br>
-
-					<ul>
-						<li>Water shoes (that won’t fall off, no flip flops)</li>
-						<li>Bathing suit</li>
-						<li>Hat/Sunglasses/Sun protection</li>
-						<li>You might want to bring: Waterproof bag for wallet, phone, lighter and other things.</li>
-					</ul>
-
-					<ul>
-
-						<li>HF Adventure Center has a free key check to keep your keys safe till your return.
-
-						</li>
-						<li>They also have a locker you may rent to keep valuables in.</li>
-						<li>Keep a towel and a dry change of clothes on-site for when you return</li>
-					</ul>
-					<P>We will provide floating coolers with water, beer, and other drinks to enjoy during the float!</P>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="zipModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h1 class="modal-title fs-5" id="exampleModalLabel">
-						<b>Ziplining:</b>
-					</h1>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					<p>
-						<i>Your canopy tour will last between 1.5 and 2 hours.</i>
-					</p>
-					<p>Guests must check-in no later than 30 minutes prior to their scheduled time. (Reservation 11am /
-						<u>check-in next to main office at 10:30 am</u>)</p>
-					<b>Requirements:</b>
-					<br>
-					<ul>
-						<li>
-							Kids must be at least 7 years old and 70+ lbs.
-						</li>
-						<li>Anyone under 18 must be accompanied by an adult.</li>
-						<li>Max weight is 250 pounds.</li>
-						<li>All guests must complete the liability waiver
-						</li>
-					</ul>
-
-
-					<b>What to wear</b>
-					<br>
-					<ul>
-						<li>
-							Sneakers or closed-toe shoes required.
-						</li>
-						<li>
-							Avoid  loose clothing and tie hair back.
-						</li>
-						<li>
-							Athletic wear advised.
-						</li>
-					</ul>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/VoWeAk4FZB4?si=REPN7RwW0XqpPo9_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-				</div>
-			</div>
-		</div>
-	</div>
 {% endblock %}

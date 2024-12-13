@@ -7,6 +7,8 @@ use App\Entity\People;
 use App\Form\RsvpType;
 use App\Form\PeopleType;
 use App\Form\PeoplePreferenceType;
+use App\Repository\RsvpRepository;
+use App\Repository\PeopleRepository;
 use App\Service\RsvpService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -62,7 +64,7 @@ class PagesController extends AbstractController
 
             return $this->redirectToRoute('rsvp_attend', ['uuid' => $rsvp->getUuid()]);
         }
-        
+
         $people = new People();
         $form = $this->createForm(RsvpType::class, $people);
 
@@ -100,7 +102,7 @@ class PagesController extends AbstractController
     }
 
     #[Route('/rsvp/attend/{uuid}', name: 'rsvp_attend')]
-    public function rsvpSuccess(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService): Response
+    public function rsvpSuccess(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager, RsvpService $rsvpService, TranslatorInterface $translator): Response
     {
         $people = $rsvp->getPeople()[0];
 
@@ -114,7 +116,7 @@ class PagesController extends AbstractController
         }
 
         return $this->render('pages/rsvp_attend.html.twig', [
-            'title' => sprintf("Can't Wait To See You  %s!", $people->getFirstName()),
+            'title' => $translator->trans("thx", ['{name}' => $people->getFirstName()]),
             'rsvp' => $rsvp,
             'form' => $form,
         ]);
@@ -173,7 +175,7 @@ class PagesController extends AbstractController
         return $this->redirect($request->headers->get('referer'));
     }
 
-    
+
     #[Route('/reset/{uuid}', name: 'reset')]
     public function reset(Rsvp $rsvp, Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -186,5 +188,27 @@ class PagesController extends AbstractController
         $request->getSession()->remove('rsvp');
 
         return $this->redirectToRoute('rsvp');
+    }
+
+
+    #[Route('/rsvps', name: 'rsvps')]
+    public function rsvps(RsvpRepository $rsvpRepository, PeopleRepository $peopleRepository): Response
+    {
+        return $this->render('pages/rsvps.html.twig', [
+            'title' => 'Received RSVP',
+            'rsvps' => $rsvpRepository->findAll(),
+            'attendency' => $peopleRepository->getAttendency(),
+            'countMeat' => $peopleRepository->countMealPreference(RsvpService::MEAL_ALL),
+            'countFish' => $peopleRepository->countMealPreference(RsvpService::MEAL_FISH),
+            'countVegan' => $peopleRepository->countMealPreference(RsvpService::MEAL_VEGAN),
+            'countYoga' => $peopleRepository->countYoga(),
+            'countTubing' => $peopleRepository->countActivity(RsvpService::ACTIVITY_TUBING),
+            'countZip' => $peopleRepository->countActivity(RsvpService::ACTIVITY_ZIP),
+            'countPool' => $peopleRepository->countActivity(RsvpService::ACTIVITY_POOL),
+            'countInn' => $peopleRepository->countAccomodation(RsvpService::LOCATION_HOTEL),
+            'countCamp' => $peopleRepository->countAccomodation(RsvpService::LOCATION_CAMP),
+            'countLC' => $peopleRepository->countAccomodation(RsvpService::LOCATION_CABIN_L),
+            'countSC' => $peopleRepository->countAccomodation(RsvpService::LOCATION_CABIN_S),
+        ]);
     }
 }
