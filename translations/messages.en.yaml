@@ -38,7 +38,7 @@ add_plus: Add other guest
 accomodations: Accomodation
 accomodations_1: We are envisioning a wedding weekend festival-vibe where our friends and family can camp in cabins, tents, or camping cars on-site, to carry-on the festivities with fellow guests and friends.
 accomodations_2: A block of cabins have been reserved for out-of-town guests at <a href="https://harpersferryadventurecenter.com/adventures/cabins/" target="_blank">Harpers Ferry Adventure Center</a>. These cabins will be on-site, and therefore within walking distance of the wedding + reception. This will also be the meeting point for Saturday morning yoga, and Sunday’s activities:&nbsp;whitewater tubing and zip lining.
-accomodations_3: There are six cabins which sleep four people each in a secluded wooded area, three minutes by foot to the wedding ceremony + reception. This area will also host the wedding afterparty. These are cabin numbers 1-6 on the <a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>. They are $139/night.
+accomodations_3: There are six cabins which sleep four people each in a secluded wooded area, three minutes by foot to the wedding ceremony + reception. This area will also host the wedding afterparty and breakfast buffet. These are cabin numbers 1-6 on the <a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>. They are $139/night.
 accomodations_4: There are four larger cabins which sleep five people each, also within a three minute walk to the ceremony + reception. These cabins are close to the main office and bathhouse, and will be quieter in the after-hours. These are cabins 7-10 on the <a data-bs-toggle="modal" data-bs-target="#mapModal" style="cursor:pointer;">map</a>. They are $149/night. <br> <br>We will provide sheets, pillows, blankets, and towels for all cabins.
 accomodations_5: "For anyone considering renting an RV or camping car, you can park it at the <a data-bs-toggle=\"modal\" data-bs-target=\"#mapModal\" style=\"cursor:pointer;\">mountaintop campsite #6</a>, free of charge."
 accomodations_6: "For more local guests who can bring their own tents and camping gear, we have booked the <a data-bs-toggle=\"modal\" data-bs-target=\"#mapModal\" style=\"cursor:pointer;\">mountaintop campsite #6</a> for you to camp at, free of charge. This campsite will be a short walk away from the ceremony and reception as well as being the site of the afterparty and breakfast buffet."
@@ -50,6 +50,7 @@ accomodations_10: "For those who prefer more modern luxuries, we have also reser
 accomodations_11: We’ve also compiled a list of local bed and breakfasts in downtown Harpers Ferry and nearby Charles Town, for those who appreciate a little historical charm.
 accomodations_12: In Harpers Ferry
 accomodations_13: In Charles Town (15 minute drive from wedding)
+accomodations_edit: "Update: As of February 4th, one small cabin and three large cabins are left."
 
 itinerary: Itinerary
 # FRIDAY
@@ -66,8 +67,8 @@ itinerary_8: "Harpers Ferry Adventure Center map"
 itinerary_9: Transportation will be provided to and from the wedding for those staying off-site.
 itinerary_10: "<b>8:30-11:30:</b> Breakfast buffet on-site for guests camping at HF Adventure Center<br><i>Location: Picnic tables at cabins 1-6</i>"
 itinerary_11: "<b>9:00-10:00:</b> Outdoor yoga at HF Adventure Center (everyone welcome! RSVP required)<br><i>Meet at Harpers Ferry Brewery Sunset Deck at 8:50am</i>"
-itinerary_12: "<b>12:00:</b>Bridal and groom’s parties, getting ready<br><i>Bridal party: please meet at location*</i><br><i>Groom party: please meet at location*</i>"
-itinerary_13: "<b>3:00-10:00:</b>Wedding ceremony and reception at Harpers Ferry Brewing</p>"
+itinerary_12: "<b>12:00:</b> Bridal and groom’s parties, getting ready<br><i>Bridal party: please meet at location*</i><br><i>Groom party: please meet at location*</i>"
+itinerary_13: "<b>3:00-10:00:</b> Wedding ceremony and reception at Harpers Ferry Brewing</p>"
 itinerary_14: "<b>10 pm onward:</b> After party at cabins 1-6"
 
 # SUNDAY
@@ -86,13 +87,13 @@ transportation: Transportation
 transportation_1: "<b>Closest international airport:</b><br>Washington Dulles (IAD)<br>40 minute drive to Harpers Ferry<br><a href=\"https://www.flydulles.com/parking-transportation/rental-cars\" target=\"_blank\">Dulles airport rental cars</a>"
 transportation_2: "<b>Amtrak train station:</b><br>Harpers Ferry (HFY)<br><a href=\"https://www.amtrak.com/tickets-reservations\" target=\"_blank\">Tickets</a>"
 transportation_3: "<b>Rental cars: </b><br><a href=\"https://www.enterprise.com/en/car-rental-locations/us/wv/charles-town-162n.html?mcid=yext:245709\" target=\"_blank\">Enterprise Rent-A-Car</a><br>10 minute drive from Harpers Ferry<br>765 E Washington St<br>Charles Town, West Virginia<br>25414 United States"
-transportation_4: "<b>Important Addresses:</b><br>Wedding Ceremony + Reception / Camping + Cabins / Yoga / Whitewater Tubing + Ziplining."
+transportation_4: "<b>Important Addresses:</b><br>Wedding Ceremony + Reception / Camping + Cabins / Yoga / Whitewater Tubing + Ziplining"
 transportation_5: "Clarion Inn"
 transportation_6: "A transportation shuttle will be provided to and from the wedding on July 12th 2025."
 transportation_7: "Attention: The closest “larger town” near Harpers Ferry is Charles <b>Town</b>, West Virginia… not to be confused with Charles<b>ton</b>, West Virginia (our capital city in southern WV)."
 
 registry: Registry
-registry_content: "Please know that your presence at our wedding is present enough! Especially for those coming across the Atlantic, we are so incredibly thankful for the effort you’ll be making to join us for our special day, so please, no gifts!<br>For those who wish to celebrate with a gift, we’re so grateful. We’ve created an online registry here:"
+registry_content: "Please know that your presence at our wedding is present enough! <br>Especially for those traveling, we are so incredibly thankful for the effort you’ll be making to join us for our special day, so please, no gifts!<br>For those who wish to celebrate with a gift, we’re so grateful. We’ve created an online registry here:"
 
 rsvp_1: "<p>Here is a recap of your selections.</p><p>Feel free to email us if you want to make any changes.<br>aujean.alquist@gmail.com</p><p>Please add other guests in your party.</p>"
 rsvp_2: "Dress code: We want you to be comfortable at our wedding. The dress code is <a data-bs-toggle=\"modal\" data-bs-target=\"#dressCode\" style=\"cursor:pointer;\">mountain chic</a>. It will be hot this time of year, and you’ll be walking on gravel and dancing on grass, so keep that in mind when choosing what to wear."

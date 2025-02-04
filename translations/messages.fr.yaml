@@ -50,6 +50,8 @@ accomodations_10: "Pour ceux qui préfèrent un luxe plus moderne, nous avons é
 accomodations_11: Nous avons également compilé une liste de chambres d'hôtes locales dans le centre-ville de Harpers Ferry et dans la ville voisine de Charles Town, pour ceux qui apprécient un peu de charme historique.
 accomodations_12: À Harpers Ferry
 accomodations_13: À Charles Town (à 15 minutes de route du mariage)
+accomodations_edit: "Mise à jour: A ce jour (4 février), il reste une petite cabine et trois grandes."
+
 
 itinerary: Itinéraire
 # FRIDAY
@@ -90,7 +92,7 @@ transportation_3: "<b>Location de voitures: </b><br><a href=\"https://www.enterp
 transportation_4: "<b>Adresses importantes: </b><br>Cérémonie de mariage + réception / Camping + cabanes / Yoga / Whitewater tubing + Tyrolienne."
 transportation_5: "Auberge Clarion Inn"
 transportation_6: "Une navette sera mise à disposition pour le transport aller-retour du mariage le 12 juillet 2025."
-transportation_7: "Attention: La « grande ville » la plus proche de Harpers Ferry est Charles <b>Town<b/>, en Virginie-Occidentale... à ne pas confondre avec Charles<b>ton</b>, en Virginie-Occidentale (notre capitale dans le sud du WV)."
+transportation_7: "Attention: La « grande ville » la plus proche de Harpers Ferry est Charles <b>Town</b>, en Virginie-Occidentale... à ne pas confondre avec Charles<b>ton</b>, en Virginie-Occidentale (notre capitale dans le sud du WV)."
 
 registry: Liste de mariage
 registry_content: "Sachez que votre présence à notre mariage est déjà le plus beau des cadeaux! En particulier pour ceux qui traversent l'Atlantique, nous sommes incroyablement reconnaissants de l'effort que vous faites pour vous joindre à nous, alors s'il vous plaît, pas de cadeaux !<br>Pour ceux qui souhaitent célébrer ce jour avec un cadeau, nous en sommes très reconnaissants.<br>Nous avons créé une liste de mariage en ligne ici:"
